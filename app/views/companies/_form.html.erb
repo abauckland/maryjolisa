@@ -1,0 +1,43 @@
+<%= bootstrap_form_for(@company, :html => {:multipart => true} ) do |f| %>
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% @company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= f.text_field :name %>
+
+    <%= f.text_field :subdomain, label: "Subdomain Name (company_name.myhq.co.uk)"  %>
+    
+    <div class="name"><%= image_tag(@company.logo_url) if @company.logo? %></div>
+   
+    <%= f.file_field :logo %>
+
+    <%= f.text_field :address_1 %>
+
+    <%= f.text_field :address_2 %>
+    
+    <%= f.text_field :city %>
+        
+    <%= f.text_field :county %>
+
+    <%= f.text_field :postcode %>
+
+    <%= f.text_field :tel %>
+
+    <%= f.text_field :email %>
+
+    <%= f.text_field :reg_no %>
+
+    <%= f.text_field :vat_no %>
+
+    <%= f.submit "Save", class: "btn btn-success"  %>
+
+<% end %>
