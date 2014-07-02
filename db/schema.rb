@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626102863) do
+ActiveRecord::Schema.define(version: 20140701124823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 20140626102863) do
     t.datetime "updated_at"
   end
 
+  create_table "mjweb_backgrounds", force: true do |t|
+    t.string   "name"
+    t.string   "background"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "mjweb_contents", force: true do |t|
     t.integer  "company_id"
     t.integer  "tile_id"
@@ -74,6 +81,13 @@ ActiveRecord::Schema.define(version: 20140626102863) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
+  end
+
+  create_table "mjweb_fonts", force: true do |t|
+    t.string   "name"
+    t.string   "style"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "mjweb_hours", force: true do |t|

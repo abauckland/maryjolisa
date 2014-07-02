@@ -4,8 +4,8 @@ class CreateMjwebDesigns < ActiveRecord::Migration
     create_table :mjweb_designs do |t|
       t.integer :company_id, :null => false
       t.string :tile_colour, :default => "#572c73", :null => false
-      t.string :background, :default => "background", :null => false
-      t.string :font, :default => "Marck Script", :null => false
+      t.string :background_id, :default => 1, :null => false
+      t.string :font_id, :default => 1, :null => false
 
       t.timestamps
     end
