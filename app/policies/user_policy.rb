@@ -12,7 +12,9 @@ class UserPolicy < Struct.new(:user, :record)
     end
     
     def show?
-      user.owner?
+      if user.admin? || user.owner?
+        record.company_id == user.company_id
+      end
     end
     
     

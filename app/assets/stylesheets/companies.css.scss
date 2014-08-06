@@ -1,3 +1,10 @@
 // Place all the styles related to the companies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.help_tooltip{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: asset_url('tooltip_icon.png');
+}

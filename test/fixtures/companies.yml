@@ -8,17 +8,14 @@ one:
   city: MyString
   county: MyString
   postcode: MyString
-  postcode: MyString
   latitude: MyString
   longitude: MyString
   tel: MyString
   email: MyString
   reg_no: MyString
   vat_no: MyString
-  photo_file_name: MyString
-  photo_content_type: MyString
-  photo_file_size:
-  photo_updated_at:
+  logo: MyString
+
 two:
   name: MyString
   subdomain: MyString
@@ -27,14 +24,10 @@ two:
   city: MyString
   county: MyString
   postcode: MyString
-  postcode: MyString
   latitude: MyString
   longitude: MyString
   tel: MyString
   email: MyString
   reg_no: MyString
   vat_no: MyString
-  photo_file_name: MyString
-  photo_content_type: MyString
-  photo_file_size:
-  photo_updated_at:
+  logo: MyString

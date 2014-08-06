@@ -1,43 +1,96 @@
-<%= bootstrap_form_for(@company, :html => {:multipart => true} ) do |f| %>
-  <% if @company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+<div class="row-fluid">
+    <div class="span4 well">
+        <%= form_for(@company, :html => {:multipart => true} ) do |f| %>
+            <fieldset>
+            <% if @company.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+            
+                <ul>
+                <% @company.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
 
-      <ul>
-      <% @company.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <div class="form-group">
+                <label class="control-label">Company Name
+                    <div class="help_tooltip" id="23"></div>
+                </label>
+                <%= f.text_field :name, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Subdomain Name
+                    <div class="help_tooltip" id="24"></div>
+                </label>
+                <%= f.text_field :subdomain, :class=>"form-control"  %>
+            </div>    
+            <div class="name"><%= image_tag(@company.logo_url(:thumb)) if @company.logo? %></div>
+            <div class="form-group">
+                <label class="control-label">Logo  
+                    <div class="help_tooltip" id="25"></div>
+                </label>
+                <%= f.file_field :logo, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Address Line 1
+                    <div class="help_tooltip" id="26"></div>
+                </label>
+                <%= f.text_field :address_1, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Address Line 2
+                    <div class="help_tooltip" id="27"></div>
+                </label>
+                <%= f.text_field :address_2, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Town/City  
+                    <div class="help_tooltip" id="28"></div>
+                </label>
+                <%= f.text_field :city, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">County      
+                    <div class="help_tooltip" id="29"></div>
+                </label>
+                <%= f.text_field :county, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Postcode
+                    <div class="help_tooltip" id="30"></div>
+                </label>
+                <%= f.text_field :postcode, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Telephone No.
+                    <div class="help_tooltip" id="31"></div>
+                </label>
+                <%= f.text_field :tel, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Email
+                    <div class="help_tooltip" id="32"></div>
+                </label>
+                <%= f.text_field :email, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Registration No.
+                    <div class="help_tooltip" id="33"></div>
+                </label>
+                <%= f.text_field :reg_no, :class=>"form-control" %>
+            </div>
+            <div class="form-group">
+                <label class="control-label">VAT No.
+                    <div class="help_tooltip" id="34"></div>
+                </label>
+                <%= f.text_field :vat_no, :class=>"form-control" %>
+            </div>
+            <div class="form-actions">
+                <%= f.submit "Save", class: "btn btn-success"  %>
+            </div>
+        </fieldset>
+        <% end %>
     </div>
-  <% end %>
-
-
-    <%= f.text_field :name %>
-
-    <%= f.text_field :subdomain, label: "Subdomain Name (company_name.myhq.co.uk)"  %>
-    
-    <div class="name"><%= image_tag(@company.logo_url) if @company.logo? %></div>
-   
-    <%= f.file_field :logo %>
-
-    <%= f.text_field :address_1 %>
-
-    <%= f.text_field :address_2 %>
-    
-    <%= f.text_field :city %>
-        
-    <%= f.text_field :county %>
-
-    <%= f.text_field :postcode %>
-
-    <%= f.text_field :tel %>
-
-    <%= f.text_field :email %>
-
-    <%= f.text_field :reg_no %>
-
-    <%= f.text_field :vat_no %>
-
-    <%= f.submit "Save", class: "btn btn-success"  %>
-
-<% end %>
+</div>

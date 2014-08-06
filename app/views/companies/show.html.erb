@@ -10,6 +10,8 @@
   <%= @company.subdomain %>
 </p>
 
+<p><%= image_tag(@company.logo_url(:thumb)) if @company.logo? %></p>
+
 <p>
   <strong>Address Line 1:</strong>
   <%= @company.address_1 %>

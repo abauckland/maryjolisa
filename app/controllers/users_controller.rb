@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   # GET /companies/1.json  
   def show 
     @user = User.find(params[:id])
+    
+    #if current_user.company_id == @user.company_id    
     authorize @user   
   end
 

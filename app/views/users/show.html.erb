@@ -6,6 +6,20 @@
 </p>
 
 <p>
+  <strong>E-mail:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
   <strong>Tel:</strong>
   <%= @user.tel %>
 </p>
+
+<p>
+  <strong>Last Sign In:</strong>
+  <%= @user.last_sign_in_at %>
+</p>
+
+
+
+<%= link_to 'Back to Employee List', users_path, :class => "btn btn-primary"  %>
