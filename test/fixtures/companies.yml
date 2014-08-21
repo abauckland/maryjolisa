@@ -15,6 +15,7 @@ one:
   reg_no: MyString
   vat_no: MyString
   logo: MyString
+  plan: 1
 
 two:
   name: MyString
@@ -31,3 +32,4 @@ two:
   reg_no: MyString
   vat_no: MyString
   logo: MyString
+  plan: 1

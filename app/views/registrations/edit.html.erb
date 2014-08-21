@@ -7,21 +7,21 @@
           <%= devise_error_messages! %>
             <div class="form-group">
                 <label class="control-label">First Name
-                    <div class="help_tooltip" id="18"></div>
+                    <div class="help_tooltip" id="1"></div>
                 </label>         
                 <%= f.text_field :first_name, autofocus: true, :class=>"form-control"  %>
             </div>
 
             <div class="form-group">
                 <label class="control-label">Surname
-                    <div class="help_tooltip" id="18"></div>
+                    <div class="help_tooltip" id="1"></div>
                 </label>         
             <%= f.text_field :surname, :class=>"form-control"  %>
             </div>
             
             <div class="form-group">
                 <label class="control-label">Email
-                    <div class="help_tooltip" id="18"></div>
+                    <div class="help_tooltip" id="2"></div>
                 </label>         
             <%= f.email_field :email, :class=>"form-control"  %>
             </div>
@@ -32,21 +32,21 @@
             
             <div class="form-group">
                 <label class="control-label">New Password (leave blank if you don't want to change it)
-                    <div class="help_tooltip" id="18"></div>
+                    <div class="help_tooltip" id="4"></div>
                 </label>          
             <%= f.password_field :password, autocomplete: "off", :class=>"form-control"  %>
             </div>
                         
             <div class="form-group">
                 <label class="control-label">Confirm Password
-                    <div class="help_tooltip" id="18"></div>
+                    <div class="help_tooltip" id="5"></div>
                 </label>          
             <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control"  %>
             </div>
             
             <div class="form-group">
                 <label class="control-label">Current Password (we need your current password to confirm your changes)
-                    <div class="help_tooltip" id="18"></div>
+                    <div class="help_tooltip" id="6"></div>
                 </label>            
             <%= f.password_field :current_password, autocomplete: "off", :class=>"form-control" %>
             </div>
