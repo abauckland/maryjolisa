@@ -14,6 +14,9 @@ class ApplicationController < ActionController::Base
   # Returning 403 Forbidden if permission is denied  
   rescue_from Pundit::NotAuthorizedError, with: :permission_denied
 
+  layout :layout_by_resource
+
+
   #root to admin index page after successfull sign in
   def after_sign_in_path_for(resource)
     dashboards_path
@@ -32,5 +35,15 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :first_name, :surname, :role, :company_id, :company_attributes => [:name]) }
   end
+
+  def layout_by_resource
+    if controller_name == 'sessions' && action_name == 'new'
+      'devise'
+    else
+      'application'
+    end
+  end
+
+
 
 end

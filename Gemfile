@@ -29,7 +29,7 @@ gem 'pundit'
 gem 'geocoder'
 gem 'carrierwave'
 gem 'font-awesome-sass'
-gem 'rmagick'
+#gem 'rmagick'
 
 
 # Use ActiveModel has_secure_password
