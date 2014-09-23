@@ -5,6 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+include Sprig::Helpers
+
+sprig [Company, User, Tile, Background, Font, Detail, Design, Hour, Mileages]
+
+
+
 Company.create(:name => "MyHq", :subdomain => 'myhq', :plan => 1)
 
 User.create(:first_name => "Louise",

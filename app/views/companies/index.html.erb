@@ -7,10 +7,9 @@
     <table>
       <thead>
         <tr>
-          <th class="mob_cell">Name</th>
-          <th class="tab_cell">Sub-domain</th>
-          <th width="20px" class="row_button"></th>
-          <th width="20px" class="row_button"><%= link_to "", new_user_registration_path, class: 'line_edit_icon', title: "create new account" %></th>
+          <th class="mob_cell" style="width:240px">Name</th>
+          <th class="lrg_cell">Sub-domain</th>
+          <th width="20px" class="row_button"><%= link_to "", new_user_registration_path, class: 'line_new_icon', title: "create new account" %></th>
         </tr>
       </thead>
     </table>
@@ -19,10 +18,9 @@
           <tbody>
             <% @companies.each do |company| %>
               <tr>
-                <td class="mob_cell"><%= company.name %></td>
-                <td class="tab_cell"><%= company.subdomain %></td>
-                <td width="20px" class="row_button"><%= link_to '', edit_company_path(company), class: 'line_edit_icon', title: "move down" %></td>
-                <td width="20px" class="row_button"><%= link_to '', company, method: :delete, data: { confirm: 'Are you sure?' }, class: 'line_delete_icon', title: "delete tile"  %></td>
+                <td class="mob_cell" style="width:240px"><%= company.name %></td>
+                <td class="lrg_cell"><%= company.subdomain %></td>
+                <td width="20px" class="row_button"><%= link_to '', company_path(company), class: 'line_show_icon', title: "show company details" %></td>
               </tr>
             <% end %>
           </tbody>

@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require nav.js
+//= require columns.js
+//= require columns_linked.js
 //= require_tree .

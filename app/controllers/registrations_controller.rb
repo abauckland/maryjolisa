@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  
+
   before_filter :check_permissions, :only => [:new, :create]
   skip_before_filter :require_no_authentication
  
@@ -15,6 +15,12 @@ class RegistrationsController < Devise::RegistrationsController
     self.resource.build_company
     respond_with self.resource
   end
+  
+  def new_employee
+    build_resource({})
+    self.resource.build_company
+    respond_with self.resource
+  end  
 
   # POST /resource
   def create
@@ -117,9 +123,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    devise_parameter_sanitizer.sanitize(:account_update)
+    devise_parameter_sanitizer.sanitize(:account_update) { |u| u.permit(:first_name, :surname, :email, :password, :password_confirmation, :role) }
   end
   
- 
   
 end

@@ -20,16 +20,19 @@
                         <div class="column_form">
 
                             <div class="column_form_item">
-                                <label class="column_form_label">Company Name:</label>                        
+                                <label class="column_form_label" style="width:100px">Company Name:</label>                        
                                 <div class="column_form_input"><%= f.text_field :name %></div>
                                 <div class="column_help_tooltip" id="company_name"></div>
                                 <div class="column_error_note"><%= error_check(@company, :name)%></div>   
                             </div>
-                            
-                            <div class="form_image"><%= image_tag(@company.logo_url, {:height => "50px"}) if @company.logo? %></div>
-                            
                             <div class="column_form_item">
-                                <label class="column_form_label">Logo:</label>                        
+                                <label class="column_form_label" style="width:100px">Logo:</label>                        
+                            <% if @company.logo? %>
+                                <div class="column_form_input"><%= image_tag(@company.logo_url, {:height => "50px"}) %></div>
+                            </div>                                                        
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px"></label>
+                            <% end %>                          
                                 <div class="column_form_input"><%= f.file_field :logo %></div>
                                 <div class="column_help_tooltip" id="company_logo"></div> 
                             </div>
@@ -42,41 +45,41 @@
                 <div class="column_form">
     
                             <div class="column_form_item">
-                                <label class="column_form_label">Address Line 1:</label>                        
+                                <label class="column_form_label" style="width:100px">Address Line 1:</label>                        
                                 <div class="column_form_input"><%= f.text_field :address_1 %></div>
                                 <div class="column_help_tooltip" id="company_address_2"></div>
                                 <div class="column_error_note"><%= error_check(@company, :address_1)%></div>     
                             </div>
                             <div class="column_form_item">
-                                <label class="column_form_label">Address Line 2:</label>                        
+                                <label class="column_form_label" style="width:100px">Address Line 2:</label>                        
                                 <div class="column_form_input"><%= f.text_field :address_2 %></div>
                                 <div class="column_help_tooltip" id="company_address_2"></div>    
                             </div>
                             <div class="column_form_item">
-                                <label class="column_form_label">Town/City:</label>                        
+                                <label class="column_form_label" style="width:100px">Town/City:</label>                        
                                 <div class="column_form_input"><%= f.text_field :city %></div>
                                 <div class="column_help_tooltip" id="company_city"></div>
                                 <div class="column_error_note"><%= error_check(@company, :city)%></div>     
                             </div>
                             <div class="column_form_item">
-                                <label class="column_form_label">County:</label>                        
+                                <label class="column_form_label" style="width:100px">County:</label>                        
                                 <div class="column_form_input"><%= f.text_field :county %></div>
                                 <div class="column_help_tooltip" id="company_county"></div>    
                             </div>                                       
                             <div class="column_form_item">
-                                <label class="column_form_label">Postcode:</label>                        
+                                <label class="column_form_label" style="width:100px">Postcode:</label>                        
                                 <div class="column_form_input"><%= f.text_field :postcode %></div>
                                 <div class="column_help_tooltip" id="company_postcode"></div>
                                 <div class="column_error_note"><%= error_check(@company, :postcode)%></div>     
                             </div>
                             <div class="column_form_item">
-                                <label class="column_form_label">Telephone No:</label>                        
+                                <label class="column_form_label" style="width:100px">Telephone No:</label>                        
                                 <div class="column_form_input"><%= f.text_field :tel %></div>
                                 <div class="column_help_tooltip" id="company_tel"></div>
                                 <div class="column_error_note"><%= error_check(@company, :tel)%></div>     
                             </div>
                             <div class="column_form_item">
-                                <label class="column_form_label">Email:</label>                        
+                                <label class="column_form_label" style="width:100px">Email:</label>                        
                                 <div class="column_form_input"><%= f.text_field :email %></div>
                                 <div class="column_help_tooltip" id="company_email"></div>     
                             </div>
@@ -90,12 +93,12 @@
                 <div class="column_form">
                         
                     <div class="column_form_item">
-                        <label class="column_form_label">Registration No:</label>                        
+                        <label class="column_form_label" style="width:100px">Registration No:</label>                        
                         <div class="column_form_input"><%= f.text_field :reg_no  %></div>
                         <div class="column_help_tooltip" id="company_reg_no"></div>  
                     </div>
                     <div class="column_form_item">
-                        <label class="column_form_label">VAT No:</label>                        
+                        <label class="column_form_label" style="width:100px">VAT No:</label>                        
                         <div class="column_form_input"><%= f.text_field :vat_no  %></div>
                         <div class="column_help_tooltip" id="company_vat_no"></div>  
                     </div>

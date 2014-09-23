@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   mount Mjweb::Engine, :at => "/"
   #mount Mjshop::Engine, :at => "/shop"
-  #mount Mjbook::Engine, :at => "/books"
+  mount Mjbook::Engine, :at => "/"
   
   root :to => redirect('/websites')
 
@@ -13,7 +13,12 @@ Rails.application.routes.draw do
     :controllers => { registrations: 'registrations' },
     :path => '', 
     :path_names => {:sign_in  => 'login', :sign_out => 'logout' }
-    
+  
+  
+  devise_scope :user do
+    get '/new_employee' => 'registrations#new_employee'
+  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
