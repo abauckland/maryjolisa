@@ -1,8 +1,23 @@
 ## Maryjolisa ##
 
-- server set up
+The following guidance assumes that:
 
-The following guidance assumes that you already have ssh access to the server and access to github.
+- the server is setup (nginx, passenger, rvm, ruby, rails, mysql, postfix)
+- you have ssh access to the server
+- you have access to github.
+
+## Server Setup ##
+
+Set up required for rmagic gem on Ubuntu 14.04
+
+    sudo apt-get install imagemagick
+    sudo apt-get install libmagickwand-dev
+    gem install rmagick
+
+then need to run rake db:migrate to get carrierwave to work – not sure why?
+
+    sudo service nginx restart
+
 
 ## Application Install/Update ##
 
@@ -11,9 +26,11 @@ The following guidance assumes that you already have ssh access to the server an
     sudo apt-get update
     sudo apt-get upgrade
 
-### Upload application ###
+### Download application ###
 
 To upload application for the first time go to directory where you would like the application to be installed and import from github
+
+    mkdir /home/manager/apps
 
 **maryjolisa:**
 
@@ -27,6 +44,13 @@ Also download dependencies:
     cd \apps
     git clone git@github.com:abauckland/mjweb.git
 
+On initial download check and where appropriate remove the following data/files:
+
+- Delete local public image files – public/uploads
+- development.log
+- production.log
+- production database
+
 ### Update application ###
 
 Update application files from github and remove unwanted directories
@@ -39,27 +63,39 @@ Update application files from github and remove unwanted directories
 
 (use *git stash save "Message"* if does not work because of gemfile.lock)
 
-### install gems ###
 
+### install gems ###
+    
+    cd /home/manager/apps/maryjolisa
     bundle install
 
 
 ### Assets, Database, Seed Data ###
-Compile assets, create database and populate with seed data:
+Compile assets, create database:
 
     RAILS_ENV=production bundle exec rake assets:precompile
     RAILS_ENV=production bundle exec rake mjweb:install:migrations
     RAILS_ENV=production rake db:migrate
-    RAILS_ENV=production rake db:seed
+
+The database is seeded using the [sprig](https://github.com/vigetlabs/sprig) gem
+
+    RAILS_ENV=production rake db:seed:reap
 
 ### Secret Keys ###
 
 If application is being installed for first time copy secrets key file across. Alternatively generate secrete key locally and save to file.
 
+    rake secret
+
+Insert key into: *config/initializers/secret_token.rb* 
+
+### Configure Nginx
+
+Refer to separate guide: *Mj Nginx Setup.md*
 
 ### Restart webserver after installation ###
 
-    sudo /etc/init.d/nginx restart
+    sudo service nginx restart
 
 ## Error Checking ##
 

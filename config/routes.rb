@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+
   resources :dashboards, :only => [:index] 
   resources :users, :only => [:index, :show]
   resources :companies
 
   mount Mjweb::Engine, :at => "/"
-  #mount Mjshop::Engine, :at => "/shop"
-  mount Mjbook::Engine, :at => "/"
+#  mount Mjbook::Engine, :at => "/"
   
   root :to => redirect('/websites')
 
