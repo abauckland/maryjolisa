@@ -28,7 +28,7 @@
                             <div class="column_form_item">
                                 <label class="column_form_label" style="width:100px">Logo:</label>                        
                             <% if @company.logo? %>
-                                <div class="column_form_input"><%= image_tag(@company.logo_url, {:height => "50px"}) %></div>
+                                <div class="column_form_input"><%= image_tag(@company.logo_url(:thumb), {:height => "50px"}) %></div>
                             </div>                                                        
                             <div class="column_form_item">
                                 <label class="column_form_label" style="width:100px"></label>

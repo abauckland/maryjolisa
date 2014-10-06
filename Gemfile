@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,7 +26,7 @@ gem 'devise'
 gem 'pundit'
 gem 'geocoder'
 gem 'carrierwave'
-#gem 'rmagick'
+gem 'rmagick'
 
 gem 'sprig', '~> 0.1'
 # Use ActiveModel has_secure_password
@@ -45,4 +45,4 @@ gem 'sprig', '~> 0.1'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'mjweb', :path => '../mjweb'
-gem 'mjbook', :path => '../mjbook'
+#gem 'mjbook', :path => '../mjbook'
