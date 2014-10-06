@@ -1,0 +1,9 @@
+{
+  "records":[
+   {"sprig_id":1,"mode":"car","rate":"0.00","hmrc_rate":"0.45"},
+   {"sprig_id":2,"mode":"van","rate":"0.00","hmrc_rate":"0.45"},
+   {"sprig_id":3,"mode":"motorcycle","rate":"0.00","hmrc_rate":"0.24"},
+   {"sprig_id":4,"mode":"cycle","rate":"0.00","hmrc_rate":"0.20"}
+  ]
+}
+

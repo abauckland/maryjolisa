@@ -79,6 +79,12 @@
                                 <div class="column_error_note"><%= error_check(@company, :tel)%></div>     
                             </div>
                             <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Telephone No:</label>                        
+                                <div class="column_form_input"><%= f.text_field :alt_tel %></div>
+                                <div class="column_help_tooltip" id="company_alt_tel"></div>
+                                <div class="column_error_note"><%= error_check(@company, :alt_tel)%></div>     
+                            </div>
+                            <div class="column_form_item">
                                 <label class="column_form_label" style="width:100px">Email:</label>                        
                                 <div class="column_form_input"><%= f.text_field :email %></div>
                                 <div class="column_help_tooltip" id="company_email"></div>     

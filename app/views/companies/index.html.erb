@@ -8,7 +8,8 @@
       <thead>
         <tr>
           <th class="mob_cell" style="width:240px">Name</th>
-          <th class="lrg_cell">Sub-domain</th>
+          <th class="tab_cell">Sub-domain</th>
+          <th class="tab_cell">Domain</th>
           <th width="20px" class="row_button"><%= link_to "", new_user_registration_path, class: 'line_new_icon', title: "create new account" %></th>
         </tr>
       </thead>
@@ -19,7 +20,8 @@
             <% @companies.each do |company| %>
               <tr>
                 <td class="mob_cell" style="width:240px"><%= company.name %></td>
-                <td class="lrg_cell"><%= company.subdomain %></td>
+                <td class="tab_cell"><%= company.subdomain %></td>
+                <td class="tab_cell"><%= company.domain %></td>
                 <td width="20px" class="row_button"><%= link_to '', company_path(company), class: 'line_show_icon', title: "show company details" %></td>
               </tr>
             <% end %>

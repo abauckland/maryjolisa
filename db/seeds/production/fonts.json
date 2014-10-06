@@ -1,0 +1,16 @@
+{
+  "records":[
+    {"sprig_id":1,"name":"Ek Mukta","style":"all items","font":"1"},  
+    {"sprig_id":2,"name":"Marck Script","style":"all items","font":"2"},  
+    {"sprig_id":3,"name":"Play","style":"all items","font":"3"},  
+    {"sprig_id":4,"name":"Questrial","style":"all items","font":"4"}, 
+    {"sprig_id":5,"name":"Coming Soon","style":"all items","font":"5"},  
+    {"sprig_id":6,"name":"Crimson Text","style":"all items","font":"6"},  
+    {"sprig_id":7,"name":"Libre Baskerville","style":"all items","font":"7"},  
+    {"sprig_id":8,"name":"Nunito","style":"all items","font":"8"},  
+    {"sprig_id":9,"name":"Open Sans","style":"all items","font":"9"},  
+    {"sprig_id":10,"name":"Pacifico","style":"all items","font":"10"}
+    {"sprig_id":11,"name":"Titillium Web","style":"all items","font":"11"}
+  ]
+}
+

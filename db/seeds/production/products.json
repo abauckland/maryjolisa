@@ -1,0 +1,16 @@
+{
+  "records":[
+    {
+    "sprig_id":1,
+    "company_id":<%= sprig_record(Company, 1).id %>,
+    "productcategory_id":<%= sprig_record(Productcategory, 1).id %>,
+    "item":"Rgl Latte",
+    "quantity":"1",
+    "unit_id":<%= sprig_record(Unit, 1).id %>,
+    "cost":"1.00",
+    "vat_id":<%= sprig_record(Vat, 1).id %>,
+    "price":"1.20"
+    }             
+  ]
+}
+

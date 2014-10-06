@@ -39,6 +39,11 @@
                                 <div class="column_form_input"><%= builder.text_field :subdomain %></div>
                                 <div class="column_help_tooltip" id="user_subdomain"></div>    
                             </div>                       
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:112px">Domain Name:</label>                        
+                                <div class="column_form_input"><%= builder.text_field :domain %></div>
+                                <div class="column_help_tooltip" id="user_subdomain"></div>    
+                            </div>  
                 <% end %>
                 <%= f.hidden_field :role, :value => "owner" %>
 

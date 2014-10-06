@@ -3,6 +3,7 @@ class CreateCompanies < ActiveRecord::Migration
     create_table :companies do |t|
       t.string :name, null: false
       t.string :subdomain
+      t.string :domain
       t.string :logo
       t.string :address_1
       t.string :address_2
@@ -12,6 +13,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :latitude
       t.string :longitude
       t.string :tel
+      t.string :alt_tel
       t.string :email
       t.string :reg_no
       t.string :vat_no

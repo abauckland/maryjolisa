@@ -119,7 +119,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     #devise_parameter_sanitizer.for(:user) { |u| u.permit(:email, :password, :password_confirmation, :first_name, :surname, company: [:name]) }
-    devise_parameter_sanitizer.sanitize(:sign_up) { |u| u.permit(:first_name, :surname, :email, :password, :password_confirmation, :role, :company_id, :company_attributes => [:name]) }
+    devise_parameter_sanitizer.sanitize(:sign_up) { |u| u.permit(:first_name, :surname, :email, :password, :password_confirmation, :role, :company_id, :company_attributes => [:name, :subdomain, :domain]) }
   end
 
   def account_update_params

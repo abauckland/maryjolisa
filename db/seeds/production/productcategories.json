@@ -1,0 +1,10 @@
+{
+  "records":[
+    {"sprig_id":1,"name":"Hot Drinks"},
+    {"sprig_id":2,"name":"Cold Drinks"},
+    {"sprig_id":3,"name":"Sandwiches"},
+    {"sprig_id":4,"name":"Toasties"},
+    {"sprig_id":5,"name":"Cakes"}    
+  ]
+}
+

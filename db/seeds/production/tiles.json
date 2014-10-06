@@ -1,0 +1,27 @@
+{
+  "records":[
+    {"sprig_id":1,"name":"Credit Union Link","partial_name":"credit_union_link","group":"1"},
+    {"sprig_id":2,"name":"Books Link","partial_name":"books_link","group":"1"}, 
+    {"sprig_id":3,"name":"Webpages Link","partial_name":"webpages_link","group":"1"}, 
+    {"sprig_id":4,"name":"Networking Link","partial_name":"networking_link","group":"1"}, 
+    {"sprig_id":5,"name":"Mentoring Link","partial_name":"mentoring_link","group":"1"}, 
+    {"sprig_id":6,"name":"Training Link","partial_name":"training_link","group":"1"}, 
+    {"sprig_id":7,"name":"Events Link","partial_name":"events_link","group":"1"}, 
+    {"sprig_id":8,"name":"Plans Link","partial_name":"plans_link","group":"1"}, 
+
+    {"sprig_id":9,"name":"Transparent sprig","partial_name":"transparent_sprig","group":"2"}, 
+    {"sprig_id":10,"name":"Colour sprig","partial_name":"colour_sprig","group":"2"}, 
+    {"sprig_id":11,"name":"Contact","partial_name":"contact","group":"2"}, 
+    {"sprig_id":12,"name":"Location Map","partial_name":"map","group":"2"}, 
+    {"sprig_id":13,"name":"Opening Hours","partial_name":"hours","group":"2"}, 
+    {"sprig_id":14,"name":"Image","partial_name":"image","group":"2"}, 
+    {"sprig_id":15,"name":"Multiple Images","partial_name":"images","group":"2"}, 
+    {"sprig_id":16,"name":"Services","partial_name":"services","group":"2"}, 
+    {"sprig_id":17,"name":"Services Link","partial_name":"services_link","group":"2"}, 
+    {"sprig_id":18,"name":"Products","partial_name":"products","group":"2"}, 
+    {"sprig_id":19,"name":"Products Link","partial_name":"products_link","group":"2"}, 
+    {"sprig_id":20,"name":"About Us Link","partial_name":"about","group":"2"},
+    {"sprig_id":21,"name":"E-commerce Link","partial_name":"ecommerce","group":"3"}
+  ]
+}
+
