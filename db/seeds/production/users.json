@@ -1,6 +1,12 @@
 {
   "records":[  
-    {"sprig_id":1,"company_id":<%= sprig_record(Company, 1).id %>,"first_name":"Louise","surname":"Pinfold","email":"louise@myhq.org.uk","role":"0","encrypted_password":"$2a$10$fo7oncwWPqVQLTnxxR7mSu/Wr3WVDjt451aUe59xbfShywRzQa5Ma"},
+    {"sprig_id":1,
+    "company_id":<%= sprig_record(Company, 1).id %>,
+    "first_name":"Louise",
+    "surname":"Pinfold",
+    "email":"louise@myhq.org.uk",
+    "role":"0",
+    "encrypted_password":"$2a$10$fo7oncwWPqVQLTnxxR7mSu/Wr3WVDjt451aUe59xbfShywRzQa5Ma"}
   ]
 }
 
