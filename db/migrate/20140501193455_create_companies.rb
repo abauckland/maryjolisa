@@ -17,7 +17,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :email
       t.string :reg_no
       t.string :vat_no
-      t.integer :plan
+      t.integer :plan, default: 2
       
       t.timestamps
     end
