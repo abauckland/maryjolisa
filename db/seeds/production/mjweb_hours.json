@@ -1,5 +1,5 @@
 {
-  "records""[
+  "records":[
     {"sprig_id":1,"company_id":"<%= sprig_record(Company, 1).id %>",
                   "monday_status":"Open",
                   "monday_open":"2000-01-01 09:30:00",
