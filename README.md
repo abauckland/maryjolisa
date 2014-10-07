@@ -79,7 +79,7 @@ Compile assets, create database:
 
 The database is seeded using the [sprig](https://github.com/vigetlabs/sprig) gem
 
-    RAILS_ENV=production rake db:seed:reap
+    RAILS_ENV=production rake db:seed
 
 ### Secret Keys ###
 
