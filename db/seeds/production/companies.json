@@ -1,6 +1,6 @@
 {
   "records":[
-    {"sprig_id":1,"name":"MyHq","subdomain":"myhqk","plan":"1"}
+    {"sprig_id":1,"name":"MyHq","subdomain":"myhq","domain":"myhq.org.uk","plan":"1"}
   ]
 }
 
