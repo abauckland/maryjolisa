@@ -1,25 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="page_title">
+    <h1>Employee Details</h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="content">
+    <div class="column_1">
+        <div class="column_content">
 
-<p>
-  <strong>E-mail:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @user.tel %>
-</p>
-
-<p>
-  <strong>Last Sign In:</strong>
-  <%= @user.last_sign_in_at %>
-</p>
-
-
-
-<%= link_to 'Back to Employee List', users_path, :class => "btn btn-primary"  %>
+            <div class="column_sub_content">
+                <div class="column_form">
+                      
+                        <div class="column_form_item">
+                            <label class="column_form_label" style="width:100px">Name:</label>                        
+                            <div class="column_form_input"><%= @user.name %></div>
+                        </div>
+                       
+                        <div class="column_form_item">
+                            <label class="column_form_label" style="width:100px">Email:</label>                        
+                            <div class="column_form_input"><%= @user.email %></div>  
+                        </div>
+                        <div class="column_form_item">
+                            <label class="column_form_label" style="width:100px">Tel:</label>                        
+                            <div class="column_form_input"><%= @user.tel %></div>  
+                        </div>
+                        <div class="column_form_item">
+                            <label class="column_form_label" style="width:100px">Lasted Signed In:</label>                        
+                            <div class="column_form_input"><%= @user.last_sign_in_at %></div>  
+                        </div>
+                </div>
+           </div>     
+                
+           <div class="column_footer">
+                <div class="column_line"></div>
+                <div class="column_cancel"><%= link_to 'Back to Employee List', users_path %></div>
+           </div>
+            
+        </div>
+    </div>
+    <div class="column_2 column_2_blank"></div> 
+    <div class="column_3 column_3_blank"></div> 
+</div>

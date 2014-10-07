@@ -13,8 +13,7 @@
         <% end %>
 
         <%= form_for(@company, :html => {:multipart => true} ) do |f| %>
-            <%= f.hidden_field :plan, :value => 2  %> 
-    
+     
         <div class="sub_column_linked_1">
                  <div class="column_content">
                         <div class="column_form">
@@ -28,7 +27,7 @@
                             <div class="column_form_item">
                                 <label class="column_form_label" style="width:100px">Logo:</label>                        
                             <% if @company.logo? %>
-                                <div class="column_form_input"><%= image_tag(@company.logo_url(:thumb), {:height => "50px"}) %></div>
+                                <div class="column_form_input"><%= image_tag(@company.logo_url(:thumb), {:height => "25px"}) %></div>
                             </div>                                                        
                             <div class="column_form_item">
                                 <label class="column_form_label" style="width:100px"></label>
@@ -116,6 +115,7 @@
         <div class="column_linked_footer">
             <div class="column_line"></div>
             <div class="column_submit"><%= f.submit "save" %></div>
+            <div class="column_cancel"><%= link_to "cancel", companies_path %></div>
             <% end %>
         </div>
             

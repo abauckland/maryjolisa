@@ -11,7 +11,6 @@ class CompaniesController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
-    authorize @company
   end
 
   # GET /companies/new
@@ -21,14 +20,13 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
-    authorize @company
   end
 
   # POST /companies
   # POST /companies.json
   def create
     @company = Company.new(company_params)
-
+    
     respond_to do |format|
       if @company.save
         format.html { redirect_to dashboards_path, notice: 'Company was successfully created.' }
@@ -43,6 +41,7 @@ class CompaniesController < ApplicationController
   # PATCH/PUT /companies/1
   # PATCH/PUT /companies/1.json
   def update
+
     respond_to do |format|
       if @company.update(company_params)
         format.html { redirect_to dashboards_path, notice: 'Company was successfully updated.' }
@@ -68,6 +67,7 @@ class CompaniesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_company
       @company = Company.find(params[:id])
+      authorize @company
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -2,8 +2,8 @@ class CreateCompanies < ActiveRecord::Migration
   def change
     create_table :companies do |t|
       t.string :name, null: false
-      t.string :subdomain
-      t.string :domain
+      t.string :subdomain, null: false
+      t.string :domain, null: false
       t.string :logo
       t.string :address_1
       t.string :address_2
@@ -22,6 +22,5 @@ class CreateCompanies < ActiveRecord::Migration
       t.timestamps
     end
     add_index :companies, :name, unique: true
-    add_index :companies, :subdomain, unique: true
   end
 end

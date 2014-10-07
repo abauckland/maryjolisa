@@ -1,6 +1,10 @@
 class Company < ActiveRecord::Base
   has_many :users
   mount_uploader :logo, LogoUploader
+  
+  after_initiation :set_default_plan
+  
+  after_create :default_settings
     
   geocoded_by :postcode
   after_validation :geocode, :if => :postcode_changed?
@@ -8,5 +12,18 @@ class Company < ActiveRecord::Base
   def phone_number
     tel.unpack('A4A3A4').join(' ')
   end
-    
+  
+  def set_default_plan
+    if new_record?
+      self.plan ||= 2
+    end    
+  end
+
+ def default_settings
+          Mjweb::Design.create(:company_id => self.id)
+          Mjweb::Detail.create(:company_id => self.id)
+          Mjweb::Hour.create(:company_id => self.id)
+ end
+
+   
 end

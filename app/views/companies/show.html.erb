@@ -1,61 +1,93 @@
-<p id="notice"><%= notice %></p>
+<div class="page_title">
+    <h1>Company Details</h1>
+</div>
+<div class="content">
+    <div class="column_linked_container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
-
-<p>
-  <strong>Subdomain Name:</strong>
-  <%= @company.subdomain %>
-</p>
-
-<p><%= image_tag(@company.logo_url(:thumb)) if @company.logo? %></p>
-
-<p>
-  <strong>Address Line 1:</strong>
-  <%= @company.address_1 %>
-</p>
-
-<p>
-  <strong>Address Line 2:</strong>
-  <%= @company.address_2 %>
-</p>
-
-<p>
-  <strong>Town/City:</strong>
-  <%= @company.city %>
-</p>
-
-<p>
-  <strong>County:</strong>
-  <%= @company.county %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @company.postcode %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @company.tel %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @company.email %>
-</p>
-
-<p>
-  <strong>Reg no:</strong>
-  <%= @company.reg_no %>
-</p>
-
-<p>
-  <strong>Vat no:</strong>
-  <%= @company.vat_no %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+        <div class="sub_column_linked_1">
+                 <div class="column_content">
+                        <div class="column_form">                      
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Name:</label>                        
+                                <div class="column_form_input"><%= @company.name %></div>
+                            </div>
+                           
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Subdomain:</label>                        
+                                <div class="column_form_input"><%= @company.subdomain %></div>  
+                            </div>
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Domain:</label>                        
+                                <div class="column_form_input"><%= @company.domain %></div>  
+                            </div>
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Logo:</label>                        
+                                <div class="column_form_input"><%= image_tag(@company.logo_url(:thumb)) if @company.logo? %></div>  
+                            </div>
+                        </div>
+                </div>
+        </div>
+         <div class="sub_column_linked_2">
+            <div class="column_content">
+                <div class="column_form">
+    
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Address Line 1:</label>                        
+                                <div class="column_form_input"><%= @company.address_1 %></div>  
+                            </div>
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Address Line 2:</label>                        
+                                <div class="column_form_input"><%= @company.address_2 %></div>  
+                            </div>
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Town/City:</label>                        
+                                <div class="column_form_input"><%= @company.city %></div>   
+                            </div>
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">County:</label>                        
+                                <div class="column_form_input"><%= @company.county %></div>
+                            </div>                                       
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Postcode:</label>                        
+                                <div class="column_form_input"><%= @company.postcode %></div>  
+                            </div>
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Telephone No:</label>                        
+                                <div class="column_form_input"><%= @company.tel %></div>   
+                            </div>
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Alt Tel No:</label>                        
+                                <div class="column_form_input"><%= @company.alt_tel %></div>   
+                            </div>
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:100px">Email:</label>                        
+                                <div class="column_form_input"><%= @company.email %></div>    
+                            </div>
+                            
+                        </div>
+                </div>     
+        </div>
+    
+        <div class="sub_column_linked_3">
+            <div class="column_content">                
+                <div class="column_form">
+                        
+                    <div class="column_form_item">
+                        <label class="column_form_label" style="width:100px">Registration No:</label>                        
+                        <div class="column_form_input"><%= @company.reg_no  %></div>
+                    </div>
+                    <div class="column_form_item">
+                        <label class="column_form_label" style="width:100px">VAT No:</label>                        
+                        <div class="column_form_input"><%= @company.vat_no  %></div>
+                    </div>
+                                            
+                </div>
+            </div>     
+        </div>
+        <div class="column_linked_footer">
+            <div class="column_line"></div>
+            <div class="column_cancel"><%= link_to 'Back to Company List', companies_path %></div>
+            <% end %>
+        </div>
+    </div>
+</div>

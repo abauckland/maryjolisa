@@ -32,9 +32,9 @@ class RegistrationsController < Devise::RegistrationsController
         set_flash_message :notice, :signed_up if is_flashing_format?
        # sign_up(resource_name, resource)
         if resource.role = "employee"
-        respond_with current_user, location: users_path
+          respond_with current_user, location: users_path
         else
-        respond_with current_user, location: companies_path
+          respond_with current_user, location: companies_path
         end
       else
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?

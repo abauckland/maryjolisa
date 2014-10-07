@@ -1,6 +1,6 @@
 {
   "records":[
-    {"sprig_id":1,"name":"Textured Light Beige"},  
-    {"sprig_id":2,"name":"White Linen"}  
+    {"sprig_id":1,"name":"Textured Light Beige","background":"textured_light_beige.png"},  
+    {"sprig_id":2,"name":"White Linen","background":"white_linen.png"}  
   ]
 }

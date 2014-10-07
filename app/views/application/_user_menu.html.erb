@@ -3,13 +3,14 @@
 <nav>
     <ul class='right_menu'>
         <li><%= link_to 'Edit My Details', main_app.edit_user_registration_path(current_user.id) %></li>                                                      
-
+        <% unless current_user.employee? %>
             <li><%= link_to 'Add/Delete Employees', main_app.users_path %></li>
             <li><%= link_to 'Edit Company Details', main_app.edit_company_path(current_user.company_id) %></li> 
-
+        <% end %>
+        <% if current_user.admin? %>
             <li><%= link_to 'Manage Accounts', main_app.companies_path %></li>
             <li><%= link_to 'MyHQ Plans', nil %></li>
-
+        <% end %> 
     </ul>        
 </nav>
 
@@ -19,14 +20,14 @@
 <nav>
     <ul class='right_menu_mob'>
         <li><%= link_to 'Edit My Details', main_app.edit_user_registration_path(current_user.id) %></li>                                                      
-
+        <% unless current_user.employee? %>
             <li><%= link_to 'Add/Delete Employees', main_app.users_path %></li>
             <li><%= link_to 'Edit Company Details', main_app.edit_company_path(current_user.company_id) %></li> 
-
-
+        <% end %>
+        <% if current_user.admin? %>
             <li><%= link_to 'Manage Accounts', main_app.companies_path %></li>
             <li><%= link_to 'MyHQ Plans', nil %></li>
-                                                   
+        <% end %>                                                   
     </ul>        
 </nav>
 
