@@ -83,7 +83,7 @@ The database is seeded using the [sprig](https://github.com/vigetlabs/sprig) gem
 
 ### Secret Keys ###
 
-If application is being installed for first time copy secrets key file across. Alternatively generate secrete key locally and save to file.
+If application is being installed for first time copy secrets key file across to the server. Alternatively generate secrete key locally and save to file.
 
     rake secret
 
