@@ -1,6 +1,6 @@
 {
   "records":[
-    {"sprig_id":1,"company_id ":"<%= sprig_record(Company, 1).id %>","tile_colour":"#9900CC","background_id":"1","font_id":"1"}
+    {"sprig_id":1,"company_id":"<%= sprig_record(Company, 1).id %>","tile_colour":"#9900CC","background_id":"1","font_id":"1"}
   ]
 }
 
