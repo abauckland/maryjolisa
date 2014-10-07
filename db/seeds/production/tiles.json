@@ -7,8 +7,7 @@
     {"sprig_id":5,"name":"Mentoring Link","partial_name":"mentoring_link","group":"1"}, 
     {"sprig_id":6,"name":"Training Link","partial_name":"training_link","group":"1"}, 
     {"sprig_id":7,"name":"Events Link","partial_name":"events_link","group":"1"}, 
-    {"sprig_id":8,"name":"Plans Link","partial_name":"plans_link","group":"1"}, 
-
+    {"sprig_id":8,"name":"Plans Link","partial_name":"plans_link","group":"1"},
     {"sprig_id":9,"name":"Transparent sprig","partial_name":"transparent_sprig","group":"2"}, 
     {"sprig_id":10,"name":"Colour sprig","partial_name":"colour_sprig","group":"2"}, 
     {"sprig_id":11,"name":"Contact","partial_name":"contact","group":"2"}, 
