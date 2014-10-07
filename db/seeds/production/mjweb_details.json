@@ -1,0 +1,6 @@
+{
+  "records":[
+    {"sprig_id":1,"company_id ":"<%= sprig_record(Company, 1).id %>"}
+  ]
+}
+
