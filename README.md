@@ -73,6 +73,8 @@ Update application files from github and remove unwanted directories
 ### Assets, Database, Seed Data ###
 Compile assets, create database:
 
+    cd /home/manager/apps/maryjolisa
+
     RAILS_ENV=production bundle exec rake assets:precompile
     RAILS_ENV=production bundle exec rake mjweb:install:migrations
     RAILS_ENV=production rake db:migrate

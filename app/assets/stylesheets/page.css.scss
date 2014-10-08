@@ -27,7 +27,7 @@
       height: 23px;
       }
   }
-
+  
 .page_title_button{
   position: absolute;
   top: 10px;
@@ -42,7 +42,13 @@
   @media screen and (max-width: $small_menu) {
   .page_title_button{top: 0px; right: 0px;}    
   }
-      
+  
+.page_title_button_red{
+  @extend .page_title_button;
+  @include red-button;
+  border: 1px solid #878787;
+  } 
+    
 .page_info {
   position: absolute;
   width:100%;
@@ -112,3 +118,4 @@
   @include green-button;
   border: 1px solid #878787;
   }
+ 

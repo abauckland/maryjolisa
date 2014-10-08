@@ -12,8 +12,7 @@
                         <div class="column_form_item">
                             <label class="column_form_label" style="width:100px">Name:</label>                        
                             <div class="column_form_input"><%= @user.name %></div>
-                        </div>
-                       
+                        </div>                       
                         <div class="column_form_item">
                             <label class="column_form_label" style="width:100px">Email:</label>                        
                             <div class="column_form_input"><%= @user.email %></div>  
@@ -23,15 +22,15 @@
                             <div class="column_form_input"><%= @user.tel %></div>  
                         </div>
                         <div class="column_form_item">
-                            <label class="column_form_label" style="width:100px">Lasted Signed In:</label>                        
-                            <div class="column_form_input"><%= @user.last_sign_in_at %></div>  
+                            <label class="column_form_label" style="width:100px">Last Login:</label>                        
+                            <div class="column_form_input"><%= @user.last_sign_in_at.strftime("%A %-d %B %Y") %></div>  
                         </div>
                 </div>
            </div>     
                 
            <div class="column_footer">
                 <div class="column_line"></div>
-                <div class="column_cancel"><%= link_to 'Back to Employee List', users_path %></div>
+                <div class="column_cancel"><%= link_to 'Back', users_path %></div>
            </div>
             
         </div>
