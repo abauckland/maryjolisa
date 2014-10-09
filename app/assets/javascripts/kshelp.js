@@ -18,7 +18,7 @@ $(document).ready(function(){
 	$("div.help_tooltip").qtip({ // Grab some elements to apply the tooltip to
 	
    		show: 'mouseover',
-   		hide: 'mouseout'
+   		hide: 'mouseout',
 	    content: {
 	        text: function(event, api) {
                 
