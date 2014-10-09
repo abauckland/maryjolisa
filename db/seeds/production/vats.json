@@ -1,7 +1,8 @@
 {
   "records":[
-    {"sprig_id":1,"cat":"Zero","rate":"0" },
     {"sprig_id":1,"cat":"20%","rate":"20" },
+    {"sprig_id":2,"cat":"5%","rate":"5" },
+    {"sprig_id":3,"cat":"Zero","rate":"0" }
   ]
 }
 

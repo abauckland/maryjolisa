@@ -11,6 +11,10 @@ class Company < ActiveRecord::Base
     tel.unpack('A4A3A4').join(' ')
   end
 
+  def www
+    return subdomain+ '.' +domain
+  end
+
  def default_settings
           Mjweb::Design.create(:company_id => self.id)
           Mjweb::Detail.create(:company_id => self.id)

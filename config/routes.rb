@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :dashboards, :only => [:index] 
   resources :users, :only => [:index, :show]
   resources :companies
-
+  resources :helps
+  
   mount Mjweb::Engine, :at => "/"
 #  mount Mjbook::Engine, :at => "/"
   
