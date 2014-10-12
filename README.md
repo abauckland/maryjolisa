@@ -109,7 +109,7 @@ If there is an error when attempt to view the website, in the server console typ
 
 If version of passenger working them:
 
-    sudo /etc/init.d/nginx stop
+    sudo service nginx stop
 
 If not error check logs in application for error information
 
