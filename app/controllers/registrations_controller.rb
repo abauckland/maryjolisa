@@ -31,7 +31,7 @@ class RegistrationsController < Devise::RegistrationsController
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
        # sign_up(resource_name, resource)
-        if resource.role = "employee"
+        if resource.owner?
           respond_with current_user, location: users_path
         else
           respond_with current_user, location: companies_path
@@ -108,7 +108,8 @@ class RegistrationsController < Devise::RegistrationsController
   # The default url to be used after updating a resource. You need to overwrite
   # this method in your own RegistrationsController.
   def after_update_path_for(resource)
-    signed_in_root_path(resource)
+    #signed_in_root_path(resource)
+    dashboards_path
   end
 
   # Authenticates the current scope and gets the current resource from the session.

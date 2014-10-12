@@ -83,7 +83,7 @@ The database is seeded using the [sprig](https://github.com/vigetlabs/sprig) gem
 
     RAILS_ENV=production rake db:seed
 
-### Secret Keys ###
+### Secret Keys ###mjweb:install:migrations
 
 If application is being installed for first time copy secrets key file across to the server. Alternatively generate secrete key locally and save to file.
 
