@@ -53,11 +53,7 @@
         <div class="column_linked_footer">
             <div class="column_line"></div>
             <div class="column_submit"><%= f.submit "save" %></div>
-                <% if resource_name.role == employee %>
-                    <div class="column_cancel"><%= link_to "cancel", dashboards_path %></div>
-                <% else %>
-                    <div class="column_cancel"><%= link_to "cancel", users_path %></div>
-                <% end %>
+            <div class="column_cancel"><%= link_to "cancel", dashboards_path %></div>
             <% end %>
         </div>
             
