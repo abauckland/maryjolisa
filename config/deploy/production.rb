@@ -1,12 +1,34 @@
+set :stage, :production
+
+set :user, "manager"
+set :domain, "85.159.214.151"
+set :application, "myhq-production"
+set :rails_env, "production"
+
+set :branch, "master"
+set :scm_verbose, true
+set :deploy_via, :remote_cache
+set :deploy_to, "/home/#{fetch :user}/apps/#{fetch :application}"
+set :use_sudo, false
+
+set :ssh_options, {
+  forward_agent: true,
+  port: 63369
+}
+
+server fetch(:domain), user: fetch(:user), roles: %w(app web db)
+
+
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+# role :app, %w{deploy@example.com}
+# role :web, %w{deploy@example.com}
+# role :db,  %w{deploy@example.com}
 
 
 # Extended Server Syntax
@@ -15,7 +37,7 @@ role :db,  %w{deploy@example.com}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+# server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 
 # Custom SSH Options
