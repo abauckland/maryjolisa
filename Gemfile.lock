@@ -1,5 +1,7 @@
-PATH
-  remote: ../mjweb
+GIT
+  remote: git@github.com:abauckland/mjweb.git
+  revision: e254d91b1122647148cdb2ca08159b5a1bb92e2b
+  branch: master
   specs:
     mjweb (0.0.1)
       carrierwave
