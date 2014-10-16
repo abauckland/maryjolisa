@@ -26,7 +26,7 @@ gem 'devise'
 gem 'pundit'
 gem 'geocoder'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', require: false
 
 gem 'sprig', '~> 0.1'
 # Use ActiveModel has_secure_password
