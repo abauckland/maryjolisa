@@ -44,5 +44,12 @@ gem 'sprig', '~> 0.1'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
-gem 'mjweb', :path => '../mjweb'
+gem 'mjweb', git: "git@github.com:abauckland/mjweb.git", branch: "master"
 #gem 'mjbook', :path => '../mjbook'
+
+group :development do
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler', '~> 1.1.2'
+end
