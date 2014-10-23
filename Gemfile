@@ -53,3 +53,5 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler', '~> 1.1.2'
 end
+
+gem 'myhqtemplate', path: '../myhq-template'

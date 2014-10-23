@@ -1,25 +1,27 @@
 Rails.application.routes.draw do
 
-  resources :dashboards, :only => [:index] 
+  resources :dashboards, :only => [:index]
   resources :users, :only => [:index, :show]
-  resources :companies
+  resources :companies do
+    resource :store, only: [:new, :create]
+  end
   resources :helps
-  
+
   mount Mjweb::Engine, :at => "/"
 #  mount Mjbook::Engine, :at => "/"
-  
+
   root :to => redirect('/websites')
 
   devise_for :users,
     :controllers => { registrations: 'registrations' },
-    :path => '', 
+    :path => '',
     :path_names => {:sign_in  => 'login', :sign_out => 'logout' }
-  
-  
+
+
   devise_scope :user do
     get '/new_employee' => 'registrations#new_employee'
   end
-  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

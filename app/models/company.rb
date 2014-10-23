@@ -44,12 +44,12 @@ class Company < ActiveRecord::Base
   end
 
   def subdomain_uniqueness
-    return if subdomain.blank?
+    return if subdomain.blank? || !subdomain_changed?
     errors.add(:subdomain, :taken) if given_subdomain_exists?(subdomain)
   end
 
   def retail_subdomain_uniqueness
-    return if retail_subdomain.blank?
+    return if retail_subdomain.blank? || !retail_subdomain_changed?
     errors.add(:retail_subdomain, :taken) if given_subdomain_exists?(retail_subdomain)
   end
 

@@ -1,0 +1,40 @@
+<div class="content">
+    <div class="column_linked_container">
+        <%= form_for @company, url: [@company, :store], method: :post do |f| %>
+            <div class="sub_column_linked_1">
+                 <div class="column_content">
+                        <div class="column_form">
+                            <div class="column_form_item">
+                                <label class="column_form_label" style="width:112px">Subdomain for your store:</label>
+                                <div class="column_form_input"><%= f.text_field :retail_subdomain, autofocus: true %></div>
+                                <div class="column_help_tooltip" id="company_retail_subdomain"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="sub_column_linked_2">
+                <div class="column_content">
+                    <%- if @company.errors.any? %>
+                        <h4>The following errors prevented your store from being created:</h4>
+                        <ul>
+                            <% @company.errors.full_messages.each do |error| %>
+                                <li><%= error %></li>
+                            <% end %>
+                        </ul>
+                    <% end -%>
+                </div>
+            </div>
+
+
+
+            <div class="column_linked_footer">
+                <div class="column_line"></div>
+                <div class="column_submit"><%= f.submit "create store" %></div>
+                <div class="column_cancel"><%= link_to "cancel", companies_path %></div>
+            </div>
+        <% end %>
+    </div>
+</div>
