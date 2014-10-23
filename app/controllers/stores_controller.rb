@@ -14,7 +14,7 @@ class StoresController < ApplicationController
 
       Rails.logger.debug("(PID: #{pid}) Started provisioning store for #{@company.inspect}")
 
-      redirect_to @company, notice: "Your store with the subdomain #{@company.retail_subdomain} is being prepared"
+      redirect_to dashboards_path, notice: "Your store with the subdomain #{@company.retail_subdomain} is being prepared"
     else
       render :new
     end
@@ -32,7 +32,7 @@ class StoresController < ApplicationController
 
   def check_company_has_no_store_already
     if STORES_PATH.join(@company.retail_subdomain).exist?
-      redirect_to(@company, notice: "You already have a store setup") and return
+      redirect_to(dashboards_path, notice: "You already have a store setup") and return
     end
   end
 end
