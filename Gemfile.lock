@@ -14,8 +14,10 @@ GIT
       sass-rails (~> 4.0.3)
       tzinfo-data
 
-PATH
-  remote: ../myhq-template
+GIT
+  remote: git@github.com:cookieshq/myhq-template.git
+  revision: c1a622fbc578ee5a24388f264f9a3e189d432b04
+  branch: gem_version
   specs:
     myhqtemplate (0.0.1)
       activesupport (= 4.1.2)
