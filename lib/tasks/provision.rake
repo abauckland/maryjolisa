@@ -11,7 +11,9 @@ task :provision_store => :environment do
       devise_secret:                 Devise.secret_key,
       rails_secret:                  Rails.application.secrets[:secret_key_base],
       admin_user_email:              user.email,
-      admin_user_encrypted_password: user.encrypted_password
+      admin_user_encrypted_password: user.encrypted_password,
+
+      nginx_restart_cmd:             ("sudo /opt/nginx/sbin/nginx -s reload" if Rails.env.production?)
     }
 
     Myhqtemplate.provision_store!(STORES_PATH, config) do
