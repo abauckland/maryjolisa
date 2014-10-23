@@ -53,3 +53,5 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler', '~> 1.1.2'
 end
+
+gem 'myhqtemplate', git: "git@github.com:cookieshq/myhq-template.git", branch: "gem_version"

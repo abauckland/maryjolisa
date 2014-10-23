@@ -1,8 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  subdomain: MyString
+  name: Company1
+  domain: myhq.org.uk
+  subdomain: company-one
+  retail_subdomain: company-one-shop
   address_1: MyString
   address_2: MyString
   city: MyString
@@ -18,8 +20,9 @@ one:
   plan: 1
 
 two:
-  name: MyString
-  subdomain: MyString
+  name: Company2
+  domain: myhq.org.uk
+  subdomain: company-two
   address_1: MyString
   address_2: MyString
   city: MyString
