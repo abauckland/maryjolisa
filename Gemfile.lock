@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git@github.com:cookieshq/myhq-template.git
-  revision: 1c3e8b7b676d8f3d4d60cbd44ac96b611161c9da
+  revision: 0dbe21561b02a24f1c0f2493a4492468000ade5f
   branch: gem_version
   specs:
     myhqtemplate (0.0.1)
