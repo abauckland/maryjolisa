@@ -12,7 +12,7 @@ class StoresController < ApplicationController
       pid = Kernel.spawn("MYHQ_STORE_COMPANY_ID=#{@company.id} bundle exec rake provision_store")
       Process.detach(pid)
 
-      Rails.logger.debug("(PID: #{pid}) Started provisioning store for #{@company.inspect}")
+      Rails.logger.info("(PID: #{pid}) Started provisioning store for #{@company.inspect}")
 
       redirect_to dashboards_path, notice: "Your store with the subdomain #{@company.retail_subdomain} is being prepared"
     else

@@ -17,7 +17,7 @@ task :provision_store => :environment do
     }
 
     Myhqtemplate.provision_store!(STORES_PATH, config) do
-      Rails.logger.debug("Provisioning worked! for #{company.inspect}")
+      Rails.logger.info("Provisioning worked! for #{company.inspect}")
     end
   rescue => e
     Rails.logger.error("Error setting up provisioning: #{e.message}")
