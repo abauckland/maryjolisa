@@ -21,6 +21,7 @@ task :provision_store => :environment do
     end
   rescue => e
     Rails.logger.error("Error setting up provisioning: #{e.message}")
+    Rails.logger.error("Current ENV: #{ENV.inspect}")
     raise e
   end
 end
