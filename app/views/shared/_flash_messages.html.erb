@@ -1,0 +1,11 @@
+<%- unless flash.empty? %>
+    <div class="header_message">
+        <%- if flash.key?("notice") %>
+            <p>Notice: <%= flash.notice %></p>
+        <% end %>
+
+        <%- if flash.key?("alert") %>
+            <p>Error: <%= flash.alert  %></p>
+        <% end %>
+    </div>
+<% end -%>

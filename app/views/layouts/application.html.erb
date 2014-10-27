@@ -22,17 +22,7 @@
                 <nav class="app_logout"><%= link_to "logout", main_app.destroy_user_session_path, method: :delete %></nav>
             </header>
 
-            <%- unless flash.empty? %>
-                <div class="header_message">
-                    <%- if flash.key?("notice") %>
-                        <p>Notice: <%= flash.notice %></p>
-                    <% end %>
-
-                    <%- if flash.key?("alert") %>
-                        <p>Error: <%= flash.alert  %></p>
-                    <% end %>
-                </div>
-            <% end -%>
+            <%= render "shared/flash_messages" %>
 
 
             <%= yield %>
