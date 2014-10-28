@@ -1,0 +1,13 @@
+<p>An error occurred when provisioning a store for Company#<%= @company.try(:id) %> by User#<%= @user.try(:id) %>.</p>
+
+<p>Full details can be found in the provisioning log: <code><%= File.join(STORES_PATH, @company.retail_subdomain.to_s, "provision.log") %></code> or the application log.</p>
+
+<h2>Exception</h2>
+<code><%= "#{@exception.message} (#{@exception.class})" %></code>
+<pre><%= Rails.backtrace_cleaner.clean(@exception.backtrace, :all).join("\n") %></pre>
+
+<h2>User</h2>
+<%= debug @user %>
+
+<h2>Company</h2>
+<%= debug @company %>

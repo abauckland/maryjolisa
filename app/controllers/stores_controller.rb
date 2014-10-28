@@ -9,10 +9,7 @@ class StoresController < ApplicationController
 
   def create
     if @company.update_attributes(company_params)
-      pid = Kernel.spawn("MYHQ_STORE_COMPANY_ID=#{@company.id} bundle exec rake provision_store")
-      Process.detach(pid)
-
-      Rails.logger.info("(PID: #{pid}) Started provisioning store for #{@company.inspect}")
+      provision_store_for(@company)
 
       redirect_to dashboards_path, notice: "Your store with the subdomain #{@company.retail_subdomain} is being prepared"
     else
@@ -32,7 +29,14 @@ class StoresController < ApplicationController
 
   def check_company_has_no_store_already
     if STORES_PATH.join(@company.retail_subdomain).exist?
-      redirect_to(dashboards_path, notice: "You already have a store setup") and return
+      redirect_to(dashboards_path, notice: "You already have a store set up") and return
     end
+  end
+
+  def provision_store_for(company)
+    pid = Kernel.spawn("MYHQ_STORE_USER_ID=#{current_user.id} MYHQ_STORE_COMPANY_ID=#{company.id} bundle exec rake provision_store")
+    Process.detach(pid)
+
+    Rails.logger.info("(PID: #{pid}) Started provisioning store for #{company.inspect}")
   end
 end

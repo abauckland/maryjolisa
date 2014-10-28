@@ -1,8 +1,8 @@
-desc "Provision a store"
+desc "Provision a store with MYHQ_STORE_COMPANY_ID=<company id>, MYHQ_STORE_USER_ID=<user id>"
 task :provision_store => :environment do
   begin
     company = Company.find(ENV["MYHQ_STORE_COMPANY_ID"])
-    user    = company.users.first
+    user    = User.find(ENV["MYHQ_STORE_USER_ID"])
 
     config = {
       app_domain:                    company.retail_subdomain,
@@ -18,11 +18,14 @@ task :provision_store => :environment do
     }
 
     Myhqtemplate.provision_store!(STORES_PATH, config) do
-      Rails.logger.info("Provisioning worked! for #{company.inspect}")
+      Rails.logger.info("Provisioning complete for #{user.inspect} at #{company.inspect}")
+
+      StoresMailer.provisioning_complete(company, user).deliver
     end
-  rescue => e
-    Rails.logger.error("Error setting up provisioning: #{e.message}")
+  rescue => exception
+    Rails.logger.error("Error setting up provisioning for #{user.inspect} at #{company.inspect}: #{exception.message}")
     Rails.logger.error("Current ENV: #{ENV.inspect}")
-    raise e
+
+    StoresMailer.provisioning_failed(company, user, exception).deliver
   end
 end
