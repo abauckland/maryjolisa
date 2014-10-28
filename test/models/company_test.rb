@@ -19,7 +19,7 @@ class CompanyTest < ActiveSupport::TestCase
 
       company.valid?
 
-      assert company.errors[field].empty?
+      assert_empty company.errors[field]
     end
 
     test "allows uppercase letters in #{field} (but downcases them)" do
@@ -27,7 +27,7 @@ class CompanyTest < ActiveSupport::TestCase
 
       company.valid?
 
-      assert company.errors[field].empty?
+      assert_empty company.errors[field]
     end
 
     test "disallows numbers in #{field}" do
@@ -35,7 +35,7 @@ class CompanyTest < ActiveSupport::TestCase
 
       company.valid?
 
-      assert_equal company.errors[field], ["can only contain letters and dashes"]
+      assert_includes company.errors[field], "can only contain letters and dashes"
     end
   end
 
@@ -44,7 +44,7 @@ class CompanyTest < ActiveSupport::TestCase
 
     new_company.valid?
 
-    assert new_company.errors[:subdomain].include?(I18n.t "errors.messages.taken")
+    assert_includes new_company.errors[:subdomain], I18n.t("errors.messages.taken")
   end
 
   test "subdomain must be unique (including retail_subdomain)" do
@@ -52,7 +52,7 @@ class CompanyTest < ActiveSupport::TestCase
 
     new_company.valid?
 
-    assert new_company.errors[:subdomain].include?(I18n.t "errors.messages.taken")
+    assert_includes new_company.errors[:subdomain], I18n.t("errors.messages.taken")
   end
 
   test "retail_subdomain must be unique" do
@@ -60,7 +60,7 @@ class CompanyTest < ActiveSupport::TestCase
 
     new_company.valid?
 
-    assert new_company.errors[:retail_subdomain].include?(I18n.t "errors.messages.taken")
+    assert_includes new_company.errors[:retail_subdomain], I18n.t("errors.messages.taken")
   end
 
   test "retail_subdomain must be unique (including subdomain)" do
@@ -68,6 +68,26 @@ class CompanyTest < ActiveSupport::TestCase
 
     new_company.valid?
 
-    assert new_company.errors[:retail_subdomain].include?(I18n.t "errors.messages.taken")
+    assert_includes new_company.errors[:retail_subdomain], I18n.t("errors.messages.taken")
+  end
+
+  [:subdomain, :retail_subdomain].each do |field|
+    test "#{field} cannot be changed once set" do
+      company = companies(:one)
+      company.assign_attributes(field => "new-#{field}")
+
+      company.valid?
+
+      assert_includes company.errors[field], "cannot be changed"
+    end
+
+    test "#{field} can be set for new records" do
+      company = companies(:one).dup
+      company.assign_attributes(field => "new-#{field}")
+
+      company.valid?
+
+      refute_includes company.errors[field], "cannot be changed"
+    end
   end
 end
