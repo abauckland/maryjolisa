@@ -34,7 +34,7 @@ class StoresController < ApplicationController
   end
 
   def provision_store_for(company)
-    pid = Kernel.spawn("MYHQ_STORE_COMPANY_ID=#{company.id} bundle exec rake provision_store")
+    pid = Kernel.spawn("MYHQ_STORE_USER_ID=#{current_user.id} MYHQ_STORE_COMPANY_ID=#{company.id} bundle exec rake provision_store")
     Process.detach(pid)
 
     Rails.logger.info("(PID: #{pid}) Started provisioning store for #{company.inspect}")
