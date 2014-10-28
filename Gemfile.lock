@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git@github.com:cookieshq/myhq-template.git
-  revision: 8e14df5887d0a92401e2e4faa6eb4caef32f5bb3
+  revision: 71d9e53416f6d77150d72ed7d3338a552b035d4a
   branch: gem_version
   specs:
     myhqtemplate (0.0.1)
@@ -89,6 +89,8 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-encryptable (0.1.2)
+      devise (>= 2.1.0)
     erubis (2.7.0)
     execjs (2.2.2)
     geocoder (1.2.2)
@@ -188,6 +190,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
+  devise-encryptable
   geocoder
   jbuilder (~> 2.0)
   jquery-rails

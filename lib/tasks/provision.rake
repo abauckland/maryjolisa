@@ -12,8 +12,9 @@ task :provision_store => :environment do
       rails_secret:                  Rails.application.secrets[:secret_key_base],
       admin_user_email:              user.email,
       admin_user_encrypted_password: user.encrypted_password,
+      admin_user_password_salt:      user.password_salt,
 
-      nginx_restart_cmd:             ("sudo /opt/nginx/sbin/nginx -s reload" if Rails.env.production?)
+      nginx_restart_cmd:             Rails.env.production? ? "sudo /opt/nginx/sbin/nginx -s reload" : "echo 'nginx restarted'"
     }
 
     Myhqtemplate.provision_store!(STORES_PATH, config) do
