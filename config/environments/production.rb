@@ -89,8 +89,7 @@ Rails.application.configure do
   # Always generate canonical URLs with HTTPS
   routes.default_url_options = {
     protocol:  "https",
-    domain:    "myhq.org.uk",
-    subdomain: "www"
+    host:      "www.myhq.org.uk"
   }
 
   config.action_mailer.default_url_options = routes.default_url_options.dup
