@@ -20,36 +20,40 @@
     color: #fff;
     cursor: pointer;
     &:hover{
-      text-decoration: underline;    
+      text-decoration: underline;
     }
   }
   @media screen and (max-width: $medium_menu) {
     .login_header_text{
       top: 12px;
-    }  
+    }
   }
 
 
 .login_container{
   margin-right: auto;
   margin-left: auto;
-  max-width: 1040px; 
+  max-width: 1040px;
 }
 
 
 .login{
   padding: 100px 0px 0px 0px;
+
+  h2 {
+    text-align: center;
+  }
 }
 
 .login_label{
-    font-size: 1.4rem;  
+    font-size: 1.4rem;
 }
 
 .login_username, .login_password{
   width: 208px;
   margin-left:auto;
   margin-right:auto;
-  input{width: 204px}  
+  input{width: 204px}
   padding: 0px 0px 10px 0px
 }
 
@@ -62,7 +66,7 @@
   margin-left:auto;
   margin-right:auto;
   input[type=submit]{
-    width: 208px;  
+    width: 208px;
     font-family: $heading_font;
     @include small-button;
     @include green-button;
@@ -71,11 +75,11 @@
   }
 }
 
-.password_reminder{ 
+.password_reminder{
   width: 196px;
   margin-top: 5px;
   margin-left:auto;
-  margin-right:auto; 
+  margin-right:auto;
   font-family: $heading_font;
   @include small-button;
   @include orange-button;
@@ -87,6 +91,6 @@
     width: 208px;
     color: #fff;
     text-decoration: none;
-    cursor: pointer;     
-  } 
+    cursor: pointer;
+  }
 }
