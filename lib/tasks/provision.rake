@@ -1,4 +1,4 @@
-desc "Provision a store"
+desc "Provision a store with MYHQ_STORE_COMPANY_ID=<company id>, MYHQ_STORE_USER_ID=<user id>"
 task :provision_store => :environment do
   begin
     company = Company.find(ENV["MYHQ_STORE_COMPANY_ID"])
