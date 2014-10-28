@@ -22,9 +22,10 @@ task :provision_store => :environment do
 
       StoresMailer.provisioning_complete(company, user).deliver
     end
-  rescue => e
-    Rails.logger.error("Error setting up provisioning for #{user.inspect} at #{company.inspect}: #{e.message}")
+  rescue => exception
+    Rails.logger.error("Error setting up provisioning for #{user.inspect} at #{company.inspect}: #{exception.message}")
     Rails.logger.error("Current ENV: #{ENV.inspect}")
-    raise e
+
+    StoresMailer.provisioning_failed(company, user, exception).deliver
   end
 end
