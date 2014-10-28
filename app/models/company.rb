@@ -14,6 +14,7 @@ class Company < ActiveRecord::Base
     format: { with: SUBDOMAIN_REGEXP, message: "can only contain letters and dashes" }
 
   validate :subdomain_uniqueness, :retail_subdomain_uniqueness
+  validate :subdomain_not_changed, :retail_subdomain_not_changed, :if => :persisted?
 
   def phone_number
     tel.unpack('A4A3A4').join(' ')
@@ -29,6 +30,10 @@ class Company < ActiveRecord::Base
 
   def retail_subdomain=(text)
     super(text.downcase)
+  end
+
+  def has_store?
+    STORES_PATH.join(retail_subdomain).exist?
   end
 
  def default_settings
@@ -55,5 +60,13 @@ class Company < ActiveRecord::Base
 
   def given_subdomain_exists?(domain)
     Company.where("subdomain = :domain OR retail_subdomain = :domain", domain: domain).any?
+  end
+
+  def subdomain_not_changed
+    errors.add(:subdomain, "cannot be changed") if subdomain_changed?
+  end
+
+  def retail_subdomain_not_changed
+    errors.add(:retail_subdomain, "cannot be changed") if retail_subdomain_changed?
   end
 end
