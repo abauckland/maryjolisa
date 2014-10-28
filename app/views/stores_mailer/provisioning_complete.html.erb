@@ -1,0 +1,15 @@
+<p>Hi <%= @user.name %>,</p>
+
+<p>Your store has now been provisioned and is available at <%= link_to nil, store_url_for_company(@company) %>.</p>
+
+<p>You can administer your store by going to <%= link_to nil, store_url_for_company(@company, path: "admin/login") %> and logging in with the same username and password you use for MyHQ.</p>
+
+<h3>Next steps</h3>
+
+<ol>
+  <li>Enter your Braintree credentials in the <%= link_to "admin page", store_url_for_company(@company, path: "admin/payment_methods/new") %>. Instructions for finding your credentials can be found <%= link_to "here", "https://support.braintreepayments.com/customer/portal/articles/1080475-api-keys" %>.</li>
+
+  <li>Add at least one shipping method throught the <%= link_to "store admin", store_url_for_company(@company, path: "admin/shipping_methods/new") %>.</li>
+
+  <li>Add <%= link_to "some products", store_url_for_company(@company, path: "admin/products/new") %>!</li>
+</ol>
