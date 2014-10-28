@@ -19,6 +19,8 @@ task :provision_store => :environment do
 
     Myhqtemplate.provision_store!(STORES_PATH, config) do
       Rails.logger.info("Provisioning complete for #{user.inspect} at #{company.inspect}")
+
+      StoresMailer.provisioning_complete(company, user).deliver
     end
   rescue => e
     Rails.logger.error("Error setting up provisioning for #{user.inspect} at #{company.inspect}: #{e.message}")
