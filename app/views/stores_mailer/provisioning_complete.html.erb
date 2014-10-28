@@ -1,8 +1,8 @@
 <p>Hi <%= @user.name %>,</p>
 
-<p>Your store has now been provisioned and is available at <%= link_to nil, store_url_for_company(@company) %>.</p>
+<p>Your store for <%= @company.name %> has now been provisioned and is available at <%= link_to nil, store_url_for_company(@company) %>.</p>
 
-<p>You can administer your store by going to <%= link_to nil, store_url_for_company(@company, path: "admin/login") %> and logging in with the same username and password you use for MyHQ.</p>
+<p>You can administer your store by going to <%= link_to nil, store_url_for_company(@company, path: "admin/login") %> and logging in with the same email and password that you use for MyHQ.</p>
 
 <h3>Next steps</h3>
 
