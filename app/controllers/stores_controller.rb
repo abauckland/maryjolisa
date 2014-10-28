@@ -28,7 +28,7 @@ class StoresController < ApplicationController
   end
 
   def check_company_has_no_store_already
-    if STORES_PATH.join(@company.retail_subdomain).exist?
+    if @company.has_store?
       redirect_to(dashboards_path, notice: "You already have a store set up") and return
     end
   end

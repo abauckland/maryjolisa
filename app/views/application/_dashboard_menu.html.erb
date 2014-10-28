@@ -1,28 +1,28 @@
 
-<!-- desktop menu -->              
-<nav class="lrg_menu">                    
-    <div class='menu_container'>                                                                    
-        <ul class="left_menu">                                                  
+<!-- desktop menu -->
+<nav class="lrg_menu">
+    <div class='menu_container'>
+        <ul class="left_menu">
                 <li><%= link_to "Credit Union", "https://www.securecuserver.co.uk/dotcomunity/members/" %></li>
                 <li><%= link_to "Accounts", nil %></li>
-                <li><%= link_to "Ecommerce", nil %></li> 
-                <li><%= link_to "Website", mjweb.contents_path %></li>                            
-        </ul>                       
-    </div>                      
+                <li><%= link_to "Ecommerce", current_user.company.has_store? ? store_url_for_company(current_user.company) : [:new, current_user.company, :store] %></li>
+                <li><%= link_to "Website", mjweb.contents_path %></li>
+        </ul>
+    </div>
 </nav>
 
 <!-- mob menu -->
 <nav class="app_mob_menu">MENU</nav>
 
-<nav class="lrg_menu_mob">                    
-    <div class='menu_container_mob'>                                                                    
-        <ul class="left_menu_mob">                                                  
+<nav class="lrg_menu_mob">
+    <div class='menu_container_mob'>
+        <ul class="left_menu_mob">
                 <li><%= link_to "CREDIT UNION", "https://www.securecuserver.co.uk/dotcomunity/members/" %></li>
                 <li><%= link_to "ACCOUNTS", nil %></li>
-                <li><%= link_to "ECOMMERCE", nil %></li> 
-                <li><%= link_to "WEBSITE", mjweb.contents_path %></li>                                
-        </ul>                      
-    </div>                      
+                <li><%= link_to "ECOMMERCE", current_user.company.has_store? ? store_url_for_company(current_user.company) : [:new, current_user.company, :store] %></li>
+                <li><%= link_to "WEBSITE", mjweb.contents_path %></li>
+        </ul>
+    </div>
 </nav>
 
 

@@ -31,6 +31,10 @@ class Company < ActiveRecord::Base
     super(text.downcase)
   end
 
+  def has_store?
+    STORES_PATH.join(retail_subdomain).exist?
+  end
+
  def default_settings
           Mjweb::Design.create(:company_id => self.id)
           Mjweb::Detail.create(:company_id => self.id)
