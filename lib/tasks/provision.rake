@@ -26,6 +26,17 @@ task :provision_store => :environment do
     Rails.logger.error("Error setting up provisioning for #{user.inspect} at #{company.inspect}: #{exception.message}")
     Rails.logger.error("Current ENV: #{ENV.inspect}")
 
+    Bugsnag.notify(exception,
+      severity: "error",
+      user: {
+        id:    user.id,
+        email: user.email
+      },
+      company: {
+        id: company.id
+      }
+    )
+
     StoresMailer.provisioning_failed(company, user, exception).deliver
   end
 end
