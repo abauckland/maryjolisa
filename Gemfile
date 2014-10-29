@@ -55,4 +55,6 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1.2'
 end
 
+gem 'bugsnag'
+
 gem 'myhqtemplate', git: "git@github.com:cookieshq/myhq-template.git", branch: "gem_version"
