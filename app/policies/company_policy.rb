@@ -30,7 +30,7 @@
       edit?
     end
     
-    def delete?
+    def destroy?
       false
     end    
         
