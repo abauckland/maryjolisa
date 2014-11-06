@@ -15,5 +15,6 @@ module ApplicationHelper
       end
 
       root_url url_options.merge(subdomain: company.retail_subdomain, host: company.domain)
+      #root_url url_options.merge(subdomain: company.retail_subdomain, host: "myhq.org.uk")
     end
 end
