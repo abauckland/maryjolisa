@@ -1,12 +1,42 @@
-<h2>Resend unlock instructions</h2>
+<div class="page_title">
+    <h1>Resend unlock instructions</h1>
+    <div class="page_title_button"><%= link_to "Sign in", new_session_path(resource_name)%></div>
+</div>
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="content">
+    <div class="column_1">
+        <div class="column_content">
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+            <% if resource.errors.any? %>
+            <div class="column_error">
+            <p><%= pluralize(resource.errors.count, "error") %> prohibited this detail from being saved:</p>
+                  <ul>
+                  <% resource.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+            </div>
+            <% end %>
 
-  <div><%= f.submit "Resend unlock instructions" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+            <div class="column_sub_content">
+                <div class="column_form">
+                <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+                      
+                        <div class="column_form_item">
+                            <label class="column_form_label" style="width:60px">Email:</label>                        
+                            <div class="column_form_input"><%= f.email_field :email, autofocus: true %></div>
+                        </div>
+                </div>
+           </div>     
+                
+           <div class="column_footer">
+                <div class="column_line"></div>
+                <div class="column_submit"><%= f.submit "Resend unlock instructions"%></div>               
+                <% end %>
+           </div>
+            
+        </div>
+    </div>
+    <div class="column_2 column_2_blank"></div> 
+    <div class="column_3 column_3_blank"></div> 
+</div>

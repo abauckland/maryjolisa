@@ -1,20 +1,48 @@
-<div class="login_container">
-    <div class="login">
-        <h2>Change your password</h2>
+<div class="page_title">
+    <h1>Change your password</h1>
+    <div class="page_title_button"><%= link_to "Sign in", new_session_path(resource_name)%></div>
+</div>
 
-        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-          <%= devise_error_messages! %>
-          <%= f.hidden_field :reset_password_token %>
+<div class="content">
+    <div class="column_1">
+        <div class="column_content">
 
-          <div class="login_password"><%= f.label :password, "New password", class: "login_label" %><br />
-            <%= f.password_field :password, autofocus: true, autocomplete: "off" %></div>
+            <% if resource.errors.any? %>
+            <div class="column_error">
+            <p><%= pluralize(resource.errors.count, "error") %> prohibited this detail from being saved:</p>
+                  <ul>
+                  <% resource.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+            </div>
+            <% end %>
 
-          <div class="login_password"><%= f.label :password_confirmation, "Confirm new password", class: "login_label" %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-          <div class="login_submit"><%= f.submit "Change my password" %></div>
-        <% end %>
-
-        <%= render "devise/shared/links" %>
+            <div class="column_sub_content">
+                <div class="column_form">
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                    <%= f.hidden_field :reset_password_token %>   
+                    
+                        <div class="column_form_item">
+                            <label class="column_form_label" style="width:100px">New password:</label>                        
+                            <div class="column_form_input"><%= f.password_field :password, autofocus: true, autocomplete: "off" %></div>
+                        </div>
+                        <div class="column_form_item">
+                            <label class="column_form_label" style="width:100px">Confirm new password:</label>                        
+                            <div class="column_form_input"><%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+                        </div>
+                </div>
+           </div>     
+                
+           <div class="column_footer">
+                <div class="column_line"></div>
+                <div class="column_submit"><%= f.submit "Change my password"%></div>               
+                <% end %>
+           </div>
+            
+        </div>
     </div>
+    <div class="column_2 column_2_blank"></div> 
+    <div class="column_3 column_3_blank"></div> 
 </div>
