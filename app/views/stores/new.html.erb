@@ -1,3 +1,7 @@
+<div class="page_title">
+    <h1>Set up retail store</h1>
+</div>
+
 <div class="content">
     <div class="column_linked_container">
         <%= form_for @company, url: [@company, :store], method: :post do |f| %>
@@ -33,7 +37,7 @@
             <div class="column_linked_footer">
                 <div class="column_line"></div>
                 <div class="column_submit"><%= f.submit "create store" %></div>
-                <div class="column_cancel"><%= link_to "cancel", companies_path %></div>
+                <div class="column_cancel"><%= link_to "cancel", dashboards_path %></div>
             </div>
         <% end %>
     </div>
