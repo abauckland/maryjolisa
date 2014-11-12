@@ -153,7 +153,10 @@ $(document).ready(function(){
 	
 	var date_field_count = $('.column_1').find('.column_form_input input[type=date]').length;
 	var date_field_height = date_field_count*32
-
+	
+	var email_field_count = $('.column_1').find('.column_form_input input[type=email]').length;
+	var email_field_height = email_field_count*32
+	
 	var colour_field_count = $('.column_1').find('.column_form_input input[type=color]').length;
 	var colour_field_height = colour_field_count*40
 	
@@ -161,7 +164,7 @@ $(document).ready(function(){
 	var dd_field_height = dd_field_count*80
 
 
-	var col_1 = 40+ select_height + text_field_height + url_field_height + file_field_height + time_field_height + date_field_height + colour_field_height + dd_field_height//$('.column_1').find('.column_form').outerHeight(true);	
+	var col_1 = 40+ select_height + text_field_height + url_field_height + email_field_height + file_field_height + time_field_height + date_field_height + colour_field_height + dd_field_height//$('.column_1').find('.column_form').outerHeight(true);	
 
 			
 	var col_2 = $('.column_2').find('.column_form').outerHeight(true);
