@@ -11,19 +11,18 @@
                       
                         <div class="column_form_item">
                             <label class="column_form_label" style="width:100px">Name:</label>                        
-                            <div class="column_form_input"><%= @user.name %></div>
+                            <div class="column_line_show"><%= @user.name %></div>
                         </div>                       
                         <div class="column_form_item">
                             <label class="column_form_label" style="width:100px">Email:</label>                        
-                            <div class="column_form_input"><%= @user.email %></div>  
+                            <div class="column_line_show"><%= @user.email %></div>  
                         </div>
                         <div class="column_form_item">
                             <label class="column_form_label" style="width:100px">Tel:</label>                        
-                            <div class="column_form_input"><%= @user.tel %></div>  
+                            <div class="column_line_show"><%= @user.tel %></div>  
                         </div>
                         <div class="column_form_item">
-                            <label class="column_form_label" style="width:100px">Last Login:</label>                        
-                            <div class="column_form_input"><%= @user.last_sign_in_at.strftime("%A %-d %B %Y") %></div>  
+                            <label class="column_line_show"><%= @user.last_sign_in_at.strftime("%A %-d %B %Y") %></div>  
                         </div>
                 </div>
            </div>     

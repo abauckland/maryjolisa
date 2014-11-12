@@ -136,35 +136,46 @@ $(document).ready(function(){
 //$small_menu: 400px;
 
 
-	var select_count = $('.column_1').find('select.full_width').length;
-	var select_height = select_count*32
+	var select_count_1 = $('.column_1').find('select.full_width').length;
+	var select_height_1 = select_count_1*32
 
-	var text_field_count = $('.column_1').find('.column_form_input input[type=text]').length;
-	var text_field_height = text_field_count*32
+	var text_field_count_1 = $('.column_1').find('.column_form_input input[type=text]').length;
+	var text_field_height_1 = text_field_count_1*32
 
-	var url_field_count = $('.column_1').find('.column_form_input input[type=url]').length;
-	var url_field_height = url_field_count*32
+	var url_field_count_1 = $('.column_1').find('.column_form_input input[type=url]').length;
+	var url_field_height_1 = url_field_count_1*32
 
-	var file_field_count = $('.column_1').find('.column_form_input input[type=file]').length;
-	var file_field_height = file_field_count*40
+	var file_field_count_1 = $('.column_1').find('.column_form_input input[type=file]').length;
+	var file_field_height_1 = file_field_count_1*40
 
-	var time_field_count = $('.column_1').find('.column_form_input input[type=time]').length;
-	var time_field_height = time_field_count*32
+	var time_field_count_1 = $('.column_1').find('.column_form_input input[type=time]').length;
+	var time_field_height_1 = time_field_count_1*32
 	
-	var date_field_count = $('.column_1').find('.column_form_input input[type=date]').length;
-	var date_field_height = date_field_count*32
-	
-	var email_field_count = $('.column_1').find('.column_form_input input[type=email]').length;
-	var email_field_height = email_field_count*32
-	
-	var colour_field_count = $('.column_1').find('.column_form_input input[type=color]').length;
-	var colour_field_height = colour_field_count*40
-	
-	var dd_field_count = $('.column_1').find('.column_form_item_dd-select').length;
-	var dd_field_height = dd_field_count*80
+	var date_field_count_1 = $('.column_1').find('.column_form_input input[type=date]').length;
+	var date_field_height_1 = date_field_count_1*32
 
+	var colour_field_count_1 = $('.column_1').find('.column_form_input input[type=color]').length;
+	var colour_field_height_1 = colour_field_count_1*40
+	
+	var dd_field_count_1 = $('.column_1').find('.column_form_item_dd-select').length;
+	var dd_field_height_1 = dd_field_count_1*80
 
-	var col_1 = 40+ select_height + text_field_height + url_field_height + email_field_height + file_field_height + time_field_height + date_field_height + colour_field_height + dd_field_height//$('.column_1').find('.column_form').outerHeight(true);	
+	var form_button_count_1 = $('.column_1').find('.column_form_button').length;
+	var form_button_height_1 = form_button_count_1*32
+
+	var form_textarea_count_1 = $('.column_1').find('textarea').length;
+	var form_textarea_height_1 = form_textarea_count_1*100
+	
+	var form_chart_count_1 = $('.column_1').find('.column_bar_chart').length;
+	var form_chart_height_1 = form_chart_count_1*350
+
+	var column_line_form_count_1 = $('.column_1').find('.column_line_form').length;
+	var column_line_form_height_1 = column_line_form_count_1*30
+
+	var column_line_show_count_1 = $('.column_1').find('.column_line_show').length;
+	var column_line_show_height_1 = column_line_show_count_1*30
+
+	var col_1 = 40+ column_line_show_height_1 + column_line_form_height_1 + select_height_1 + text_field_height_1 + url_field_height_1 + file_field_height_1 + time_field_height_1 + date_field_height_1 + colour_field_height_1 + dd_field_height_1 + form_button_height_1 + form_textarea_height_1 + form_chart_height_1	
 
 			
 	var col_2 = $('.column_2').find('.column_form').outerHeight(true);

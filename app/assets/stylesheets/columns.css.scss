@@ -132,6 +132,11 @@
  width: 100px; //width set so that jquery can calculate height of form in column
 }
 
+.column_line_show {
+ float: left;  
+ width: 100px; //width set so that jquery can calculate height of form in column
+}
+
 .column_form_input input{
  float: left;
  width: 100px; //width set so that jquery can calculate height of form in column
