@@ -1,5 +1,179 @@
-<div class="container">
-  <div class="content">
-    <%= link_to "Setup store", [:new, current_user.company, :store] %>
-  </div>
+<% if current_user.company_id == 2 %>
+<div class="page_title">
+    <h1>Summary</h1>
 </div>
+
+<div class="content">
+    <div class="column_1">
+        <div class="column_content">            
+           <div class="column_sub_content">
+               <div class="column_linked_sub_title">Expenses Pending</div> 
+               <div id="expenses_bar_chart" class="column_bar_chart"></div> 
+           </div>     
+                
+           <div class="column_footer">
+                <div class="column_line"></div>
+                <div class="column_add"><%= link_to "add", nil %></div>
+                <div class="column_index"><%= link_to "list", nil %></div>
+           </div>            
+        </div>
+    </div>
+    <div class="column_2">
+        <div class="column_content">
+           
+            
+           <div class="column_sub_content">
+               <div class="column_linked_sub_title">Income Pending</div> 
+               <div id="income_bar_chart" class="column_bar_chart"></div>
+           </div>     
+                
+           <div class="column_footer">
+                <div class="column_line"></div>
+                <div class="column_add"><%= link_to "add", nil %></div>
+                <div class="column_index"><%= link_to "list", nil %></div>
+           </div>
+            
+        </div>
+    </div> 
+    <div class="column_3">
+        <div class="column_content">
+           
+            
+           <div class="column_sub_content">
+               <div class="column_linked_sub_title">Projected Balance</div> 
+               <div id="balance_bar_chart" class="column_bar_chart"></div>
+           </div>     
+                
+           <div class="column_footer">
+                <div class="column_line"></div>
+                <div class="column_add"><%= link_to "add", nil %></div>
+                <div class="column_index"><%= link_to "list", nil %></div>
+           </div>
+            
+        </div>
+    </div>  
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var e1 = [0, 600, 700, 1000]; //accepted
+        var e2 = [460]; //accepted
+        var e3 = [260]; //submitted    
+        var e4 = [260]; //submitted 
+        
+        var i1 = [0, 600, 700, 1000]; //accepted
+        var i2 = [460]; //accepted
+        var i3 = [260]; //submitted 
+        var i4 = [260]; //submitted 
+
+        var b1 = [-200, 600, 700, 1000]; //accepted
+
+        var ticks = ['due', '0-30 days', '30-60 days', '60-90 days'];
+
+        var render_options = {fillToZero: true, barWidth: 55}
+        var y_axis_settings = {pad: 1.05, min: 0, tickOptions: {formatString: "£%'d", fontSize: '8pt' }, rendererOptions: {drawBaseline: false}};
+        var x_axis_settings = {renderer: $.jqplot.CategoryAxisRenderer, ticks: ticks, tickOptions: {fontSize: '8pt'}};
+        var grid_settings = {background: '#fff',borderWidth: 0, shadow: false,};
+               
+        var plot1 = $.jqplot('expenses_bar_chart', [e1, e2, e3, e4], {
+            stackSeries: true,        
+            seriesDefaults:{
+                renderer:$.jqplot.BarRenderer,
+                rendererOptions: render_options,
+                pointLabels: {show: true, stackedValue: true}
+            },
+            series:[
+                {label:'>0 days'},
+                {label:'>0 days'},
+                {label:'>30 days'},
+                {label:'>60 days'}
+            ],
+            legend: {
+                renderer: $.jqplot.EnhancedLegendRenderer,
+                show: true,
+                placement: 'outsideGrid',
+                location: 's',
+                rendererOptions: {
+                    numberRows: 1
+                }
+            },
+            axes: {xaxis: x_axis_settings, yaxis: y_axis_settings},
+            grid: grid_settings,        
+            seriesColors: [ "#ffd0d0", "#ff9090", "#ff7070", "#ff5050"],
+        });
+        
+        $("#expenses_bar_chart").find("td.jqplot-table-legend-label").first().hide();
+        $("#expenses_bar_chart").find("td.jqplot-table-legend-swatch").first().hide();        
+        $("#expenses_bar_chart").find("div.jqplot-point-0").first().hide();
+        
+        var plot2 = $.jqplot('income_bar_chart', [i1, i2, i3, i4], {
+            stackSeries: true,        
+            seriesDefaults:{
+                renderer:$.jqplot.BarRenderer,
+                rendererOptions: render_options,
+                pointLabels: {show: true, stackedValue: true}
+            },
+            series:[
+                {label:'>0 days'},
+                {label:'>0 days'},
+                {label:'>30 days'},
+                {label:'>60 days'}
+            ],
+            legend: {
+                renderer: $.jqplot.EnhancedLegendRenderer,
+                show: true,
+                placement: 'outsideGrid',
+                location: 's',
+                rendererOptions: {
+                    numberRows: 1
+                }
+            },
+            axes: {xaxis: x_axis_settings, yaxis: y_axis_settings},
+            grid: grid_settings,        
+            seriesColors: [ "#507d50", "#64c864", "#b4eab9", "#e0ffd0" ],
+        });
+
+        $("#income_bar_chart").find("td.jqplot-table-legend-label").first().hide();
+        $("#income_bar_chart").find("td.jqplot-table-legend-swatch").first().hide();
+        $("#income_bar_chart").find("div.jqplot-point-0").first().hide();
+        
+        var plot3 = $.jqplot('balance_bar_chart', [b1], {
+            stackSeries: true,        
+            seriesDefaults:{
+                renderer:$.jqplot.BarRenderer,
+                rendererOptions: render_options,
+                pointLabels: {show: true, stackedValue: true}
+            },
+            axes: {xaxis: x_axis_settings, yaxis: y_axis_settings},
+            grid: grid_settings,       
+            seriesColors: [ "#507d50", "#64c864", "#b4eab9"],
+            negativeSeriesColors: [ "#ff5050", "#ff9696", "#ffdcdc"]
+        });
+        
+        $(window).resize(function() {
+            plot1.replot( { resetAxes: {xaxis:true} } );
+        $("#expenses_bar_chart").find("td.jqplot-table-legend-label").first().hide();
+        $("#expenses_bar_chart").find("td.jqplot-table-legend-swatch").first().hide();
+        $("#expenses_bar_chart").find("div.jqplot-point-0").first().hide();
+            plot2.replot( { resetAxes: {xaxis:true} } );
+        $("#income_bar_chart").find("td.jqplot-table-legend-label").first().hide();
+        $("#income_bar_chart").find("td.jqplot-table-legend-swatch").first().hide();
+        $("#income_bar_chart").find("div.jqplot-point-0").first().hide();
+            plot3.replot( { resetAxes: {xaxis:true} } );
+        });
+            
+    });        
+</script> 
+    
+<style type="text/css">
+.column_bar_chart .jqplot-point-label {
+  color: #000;
+  font-size: 1.1rem;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+</style>
+
+<% end %>
+    

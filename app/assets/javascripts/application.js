@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require mjbook/plugins/qtip2.js
+//= require mjbook/plugins/jquery.jqplot.js
+//= require mjbook/jqplotPlugins/jqplot.barRenderer.js
+//= require mjbook/jqplotPlugins/jqplot.categoryAxisRenderer.js
+//= require mjbook/jqplotPlugins/jqplot.enhancedLegendRenderer.js
+//= require mjbook/jqplotPlugins/jqplot.pointLabels.js
 //= require nav.js
 //= require columns.js
 //= require columns_linked.js
