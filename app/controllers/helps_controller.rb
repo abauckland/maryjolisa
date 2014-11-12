@@ -1,5 +1,8 @@
 
   class HelpsController < ApplicationController
+
+    skip_before_filter :authenticate_user!, :only => [:show]
+
     before_action :set_help, only: [:show, :edit, :update, :create, :destroy]
 
 

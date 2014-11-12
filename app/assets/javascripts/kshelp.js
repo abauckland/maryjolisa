@@ -1,21 +1,6 @@
-//
-//   File: kshelp.js
-//   Created on: 2014-09-21
-//   Last modified: 2014-09-21
-//
-
-//    Purpose:
-//    -------------------------------------------------------------------------
-//
-//    Replaces all textareas (class="widgEditor") in a HTML document with
-//    enhanced editing windows to allow basic HTML formatting in a WYSIWYG
-//    manner.
-//
-
-
 $(document).ready(function(){
 
-	$("div.help_tooltip").qtip({ // Grab some elements to apply the tooltip to
+	$("div.column_help_tooltip").qtip({ // Grab some elements to apply the tooltip to
 	
    		show: 'mouseover',
    		hide: 'mouseout',
@@ -23,7 +8,7 @@ $(document).ready(function(){
 	        text: function(event, api) {
                 
 	            $.ajax({
-	                url: 'http://www.myhq.org.uk/helps/'+$(this).attr('id'),
+	                url: 'https://www.myhq.org.uk/helps/'+$(this).attr('id'),
 	                type: 'GET', // POST or GET
 	                dataType: 'html',
 	            })
@@ -42,12 +27,5 @@ $(document).ready(function(){
 	        at: 'bottom center', // at the bottom right of...
 	    }
 	})
-
-
-	$("div.help_tooltip").dblclick(function (){
-	// redirect to edit tip content
-	        window.location = 'http://www.myhq.org.uk/helps/'+$(this).attr('id')+'/edit';
-	        return false;
-	});
 
 });
