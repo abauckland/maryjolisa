@@ -109,7 +109,13 @@
         <div class="column_linked_footer">
             <div class="column_line"></div>
             <div class="column_submit"><%= f.submit "save" %></div>
-            <div class="column_cancel"><%= link_to "cancel", companies_path %></div>
+
+                <% if current_user.admin? %>
+                    <div class="column_cancel"><%= link_to "cancel", companies_path %></div>
+                <% else %>
+                    <div class="column_cancel"><%= link_to "cancel", dashboards_path %></div>
+                <% end %>
+
             <% end %>
         </div>
             
