@@ -14,7 +14,7 @@ class Company < ActiveRecord::Base
     format: { with: SUBDOMAIN_REGEXP, message: "can only contain letters and dashes" }
 
   validate :subdomain_uniqueness, :retail_subdomain_uniqueness
-  validate :subdomain_not_changed, :retail_subdomain_not_changed, :if => :persisted?
+  validate :subdomain_not_changed, :retail_subdomain_not_changed, :if => :persisted?  
 
   def phone_number
     tel.unpack('A4A3A4').join(' ')
