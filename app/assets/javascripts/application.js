@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require mjbook/plugins/qtip2.js
-//= require mjbook/plugins/jquery.jqplot.js
-//= require mjbook/jqplotPlugins/jqplot.barRenderer.js
-//= require mjbook/jqplotPlugins/jqplot.categoryAxisRenderer.js
-//= require mjbook/jqplotPlugins/jqplot.enhancedLegendRenderer.js
-//= require mjbook/jqplotPlugins/jqplot.pointLabels.js
+//= require plugins/qtip2.js
+//= require plugins/jquery.jqplot.js
+//= require jqplotPlugins/jqplot.barRenderer.js
+//= require jqplotPlugins/jqplot.categoryAxisRenderer.js
+//= require jqplotPlugins/jqplot.enhancedLegendRenderer.js
+//= require jqplotPlugins/jqplot.pointLabels.js
 //= require nav.js
 //= require columns.js
 //= require columns_linked.js
