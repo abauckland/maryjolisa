@@ -17,6 +17,10 @@
                 <div class="column_form">
                 <%= form_for(@help) do |f| %>
                     <%= f.hidden_field :company_id, :value => current_user.company_id %>    
+                        <div class="column_form_item">
+                            <label class="column_form_label" style="width:90px">Item class name:</label>                        
+                            <div class="column_form_input"><%= f.text_area :text %></div>
+                        </div>
                     
                         <div class="column_form_item">
                             <label class="column_form_label" style="width:90px">Help Text:</label>                        
@@ -28,7 +32,7 @@
            <div class="column_footer">
                 <div class="column_line"></div>
                 <div class="column_submit"><%= f.submit "save"%></div>
-                <div class="column_cancel"><%= link_to "cancel", main_app.dashboards_path %></div>                
+                <div class="column_cancel"><%= link_to "cancel", main_app.helps_path %></div>                
                 <% end %>
            </div>
             
