@@ -156,6 +156,9 @@ $(document).ready(function(){
 
 	var colour_field_count_1 = $('.column_1').find('.column_form_input input[type=color]').length;
 	var colour_field_height_1 = colour_field_count_1*40
+
+	var radio_field_count_1 = $('.column_1').find('.column_form_text input[type=radio]').length;
+	var radio_field_height_1 = radio_field_count_1*30
 	
 	var dd_field_count_1 = $('.column_1').find('.column_form_item_dd-select').length;
 	var dd_field_height_1 = dd_field_count_1*80
@@ -172,10 +175,10 @@ $(document).ready(function(){
 	var column_line_form_count_1 = $('.column_1').find('.column_line_form').length;
 	var column_line_form_height_1 = column_line_form_count_1*30
 
-	var column_line_show_count_1 = $('.column_1').find('.column_line_show').length;
-	var column_line_show_height_1 = column_line_show_count_1*30
+	var column_title_count_1 = $('.column_1').find('.column_title').length;
+	var column_title_height_1 = column_title_count_1*30
 
-	var col_1 = 40+ column_line_show_height_1 + column_line_form_height_1 + select_height_1 + text_field_height_1 + url_field_height_1 + file_field_height_1 + time_field_height_1 + date_field_height_1 + colour_field_height_1 + dd_field_height_1 + form_button_height_1 + form_textarea_height_1 + form_chart_height_1	
+	var col_1 = 40+ column_title_height_1 + radio_field_height_1 + column_line_form_height_1 + select_height_1 + text_field_height_1 + url_field_height_1 + file_field_height_1 + time_field_height_1 + date_field_height_1 + colour_field_height_1 + dd_field_height_1 + form_button_height_1 + form_textarea_height_1 + form_chart_height_1	
 
 			
 	var col_2 = $('.column_2').find('.column_form').outerHeight(true);
