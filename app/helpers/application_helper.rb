@@ -14,7 +14,7 @@ module ApplicationHelper
         url_options[:script_name] = "/" + url_options.delete(:path)
       end
 
-      root_url url_options.merge(subdomain: company.retail_subdomain, host: company.domain)
-      #root_url url_options.merge(subdomain: company.retail_subdomain, host: "myhq.org.uk")
+#      root_url url_options.merge(subdomain: company.retail_subdomain, host: company.domain)
+      root_url url_options.merge(subdomain: company.retail_subdomain, host: "myhq.org.uk")
     end
 end
