@@ -22,5 +22,4 @@
 //= require columns.js
 //= require columns_linked.js
 //= require kshelp.js
-//= require widgEditor.js
 //= require_tree .
