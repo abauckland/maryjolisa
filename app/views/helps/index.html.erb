@@ -21,7 +21,7 @@
             <% @helps.each do |help| %>
               <tr>
                 <td class="mob_cell"><%= help.item %></td>
-                <td class="mob_cell"><%= help.text %></td>
+                <td class="mob_cell"><%= help.text.html_safe %></td>
                 <td width="20px" class="row_button"><%= link_to "", edit_help_path(help), class: 'line_edit_icon', title: "edit help text" %></td>
               </tr>
             <% end %>

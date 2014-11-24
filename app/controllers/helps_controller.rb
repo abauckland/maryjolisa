@@ -3,16 +3,17 @@
 
     skip_before_filter :authenticate_user!, :only => [:show]
 
-    before_action :set_help, only: [:show, :edit, :update, :create, :destroy]
+    before_action :set_help, only: [:edit, :update, :create, :destroy]
 
 
     def index
-      @helps = Help.all
+      @helps = Help.all.order('item')
       authorize @helps
     end
 
     # GET /helps/1
     def show
+      @help = Help.where(:item => params[:id]).first
       render :text=> @help.text 
     end
 
@@ -27,12 +28,11 @@
 
     # POST /pages
     def create
-      @help = Help.new(page_params)
+      @help = Help.new(help_param)
       authorize @help
-      if @page.save
-        redirect_to @help, notice: 'Help item was successfully created.'
+      if @help.save
       else
-        render :new
+        render helps_path
       end
     end
 
@@ -42,9 +42,9 @@
       authorize @help
       if @help.update(help_params)
 #on create redirect back to dashbard
-        redirect_to @help, notice: 'Help item was successfully updated.'
+        redirect_to helps_path, notice: 'Help item was successfully updated.'
       else
-        render :edit
+        render helps_path
       end
     end
 
@@ -57,7 +57,7 @@
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_help
-        @help = Help.where(:item => params[:id]).first
+        @help = Help.where(:id => params[:id]).first
       end
 
       # Only allow a trusted parameter "white list" through.

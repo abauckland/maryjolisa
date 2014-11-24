@@ -26,7 +26,7 @@ $(document).ready(function(){
 	        my: 'top center',  // Position my top left...
 	        at: 'bottom center', // at the bottom right of...
 	    }
-	})
+	});
 
 
 	$("div.title_help_tooltip").qtip({ // Grab some elements to apply the tooltip to
@@ -55,7 +55,7 @@ $(document).ready(function(){
 	        my: 'top center',  // Position my top left...
 	        at: 'bottom center', // at the bottom right of...
 	    }
-	})
+	});
 
 
 });

@@ -178,7 +178,13 @@ $(document).ready(function(){
 	var column_title_count_1 = $('.column_1').find('.column_title').length;
 	var column_title_height_1 = column_title_count_1*30
 
-	var col_1 = 40+ column_title_height_1 + radio_field_height_1 + column_line_form_height_1 + select_height_1 + text_field_height_1 + url_field_height_1 + file_field_height_1 + time_field_height_1 + date_field_height_1 + colour_field_height_1 + dd_field_height_1 + form_button_height_1 + form_textarea_height_1 + form_chart_height_1	
+	var column_title_count_1 = $('.column_1').find('.column_title').length;
+	var column_title_height_1 = column_title_count_1*30
+
+	var column_help_textarea = $('.column_1').find('.help_textarea').length;
+	var help_textarea_height_1 = column_help_textarea*350
+
+	var col_1 = 40+ help_textarea_height_1 + column_title_height_1 + radio_field_height_1 + column_line_form_height_1 + select_height_1 + text_field_height_1 + url_field_height_1 + file_field_height_1 + time_field_height_1 + date_field_height_1 + colour_field_height_1 + dd_field_height_1 + form_button_height_1 + form_textarea_height_1 + form_chart_height_1	
 
 			
 	var col_2 = $('.column_2').find('.column_form').outerHeight(true);

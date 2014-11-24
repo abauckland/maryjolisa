@@ -1,3 +1,13 @@
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+<script>tinymce.init({
+    selector:'textarea',
+    menubar : false,
+    statusbar : false,
+    height : 300,
+    toolbar: ["fontselect fontsizeselect","bold italic underline bullist numlist"]
+});</script>
+
+
 <div class="content">
     <div class="column_1">
         <div class="column_content">
@@ -19,12 +29,12 @@
                     <%= f.hidden_field :company_id, :value => current_user.company_id %>    
                         <div class="column_form_item">
                             <label class="column_form_label" style="width:90px">Item class name:</label>                        
-                            <div class="column_form_input"><%= f.text_area :text %></div>
+                            <div class="column_form_input"><%= f.text_field :item %></div>
                         </div>
                     
                         <div class="column_form_item">
                             <label class="column_form_label" style="width:90px">Help Text:</label>                        
-                            <div class="column_form_input"><%= f.text_area :text %></div>
+                            <div class="column_form_input help_textarea"><%= f.text_area :text, class: "widgEditor" %></div>
                         </div>
                 </div>
            </div>     
