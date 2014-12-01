@@ -28,7 +28,7 @@ gem 'pundit'
 gem 'geocoder'
 gem 'fog'
 gem 'carrierwave'
-gem 'rmagick', require: false
+gem 'rmagick', '= 2.13.3', require: false
 
 gem 'sprig', '~> 0.1'
 # Use ActiveModel has_secure_password
