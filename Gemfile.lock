@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjweb.git
-  revision: 44a4ca834d2b08cf1b7fee94eaffa71771baa308
+  revision: a87f5329decdccbbd91e1c7e29614128a75082fc
   branch: master
   specs:
     mjweb (0.0.1)
@@ -199,7 +199,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.2.1)
+    sprockets-rails (2.2.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
