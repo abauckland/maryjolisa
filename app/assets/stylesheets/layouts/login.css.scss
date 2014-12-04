@@ -23,7 +23,7 @@
       text-decoration: underline;
     }
   }
-  @media screen and (max-width: $medium_menu) {
+  @media screen and (max-width: $tablet-landscape) {
     .login_header_text{
       top: 12px;
     }
@@ -68,10 +68,7 @@
   input[type=submit]{
     width: 208px;
     font-family: $heading_font;
-    @include small-button;
-    @include green-button;
-    @include shadow-all(0px 0px 5px #aeaeae);
-    border: 2px solid #77a809;
+    @include title-button-green;
   }
 }
 
@@ -81,10 +78,7 @@
   margin-left:auto;
   margin-right:auto;
   font-family: $heading_font;
-  @include small-button;
-  @include orange-button;
-  @include shadow-all(0px 0px 5px #aeaeae);
-  border: 2px solid #f29c93;
+  @include title-button-orange;
   text-align: center;
   display: block; //required to override setting in button mixin
   a{
