@@ -2,7 +2,7 @@
 <ul class="left_menu">
     <li><%= link_to "Credit Union", "https://www.securecuserver.co.uk/dotcomunity/members/" %></li>
     <% if current_user.admin? %>
-        <li><%= link_to "Accounts", mjbook.summaries_path %></li>
+        <li><%= link_to "Accounts", nil %></li>
     <% end %> 
     <li><%= link_to "Ecommerce", current_user.company.has_store? ? store_url_for_company(current_user.company, :path => 'admin') : [:new, current_user.company, :store] %></li>
     <li><%= link_to "Website", mjweb.contents_path %></li>
