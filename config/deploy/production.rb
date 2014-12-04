@@ -12,8 +12,9 @@ set :deploy_to, "/home/#{fetch :user}/apps/#{fetch :application}"
 set :use_sudo, false
 
 set :ssh_options, {
+  port: 63369,
+  keys: ["C:/Users/Andrew/.ssh/myhq.ppk"],
   forward_agent: true,
-  port: 63369
 }
 
 server fetch(:domain), user: fetch(:user), roles: %w(app web db)

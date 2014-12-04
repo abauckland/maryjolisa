@@ -1,0 +1,11 @@
+    SUBDOMAIN_REGEXP = /\A[a-z\-]+\z/
+    NAME_REGEXP = /\A[a-zA-Z\-]+\z/ #letters, and hyphen only
+    POSTCODE_REGEXP = /\A(a-zA-Z0-9\s{7,8})\z/ #checks format only not validity of the postcode, UK postcode formatting only
+    PHONE_REGEXP = /\A^([0]{1})([0-9\s]{8,12})\z/ #must start with '0', can have upto 2 spaces
+    VAT_REGEXP = /^([GB])*([0-9]{9})$/ #no spaces allowed, inclusion of 'GB' prefix optional, where prefix is provided must be capitals
+    REG_REGEXP = /((^([SC]{2}[0-9]{6})$)|([0-9]{8})$)/ #no spaces allowed, 'SC' prefix where used must be capitals
+    ADDRESS_REGEXP = /\A[a-zA-Z0-9\-\s]+\z/ #letters, numbers, hyphen and space only  
+    CITY_REGEXP = /\A[a-zA-Z\-\s]+\z/ #letters, hyphen and space only
+    EMAIL_REGEXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/
+    DATE_REGEXP = /(20[0-9][0-9])\S((02\S[012][0-9])|(0[469]\S([012][0-9]|30))|(0[13578]\S([012][0-9]|3[0-1]))|(1[012]\S([012][0-9]|3[0-1])))/
+    IMAGE_REGEXP = /\A[a-zA-Z\S]+\z/

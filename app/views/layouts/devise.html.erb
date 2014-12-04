@@ -12,20 +12,17 @@
     </head>
     
     <body>
-        
-        <div class="body_container">
-        
-            <header class="app_page_header">        
+        <div class="grid-container outline">
+
+            <div class="row header">
                 <figure class="app_logo"></figure>
                 <nav class="login_header_text">Welcome, Please Sign In...  </nav>
-                      
-            </header>
-    
-       <!--     <div  class="header_message">Success or Error Message Here</div> -->
+            </div>
 
-     
+            <%= render "shared/flash_messages" %>
+
             <%= yield %>
-    
-        </div> 
+
+        </div>
     </body>
 </html>

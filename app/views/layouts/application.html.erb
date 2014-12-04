@@ -13,19 +13,15 @@
 
     <body>
 
-        <div class="body_container">
+        <div class="grid-container outline">
 
-            <header class="app_page_header">
+            <div class="row header">
                 <figure class="app_logo"></figure>
-                <% if user_signed_in? %>
-                    <%= render :partial => "admin_menu" %>
-                    <%= render :partial => "user_menu" %>
-                    <nav class="app_logout"><%= link_to "logout", main_app.destroy_user_session_path, method: :delete %></nav>
-                <% end %>
-            </header>
+                <%= render :partial => "admin_menu" %>
+                <%= render :partial => "user_menu" %>
+            </div>
 
-           <!-- <%= render "shared/flash_messages" %> -->
-
+            <%= render "shared/flash_messages" %>
 
             <%= yield %>
 

@@ -12,22 +12,19 @@
     </head>
 
     <body>
+        <div class="grid-container outline">
 
-        <div class="body_container">
-
-            <header class="app_page_header">
+            <div class="row header">
                 <figure class="app_logo"></figure>
                 <%= render :partial => "dashboard_menu" %>
                 <%= render :partial => "user_menu" %>
-                <nav class="app_logout"><%= link_to "logout", main_app.destroy_user_session_path, method: :delete %></nav>
-            </header>
+            </div>
 
-       <!--     <div  class="header_message">Success or Error Message Here</div> -->
-           <!-- <%= render "shared/flash_messages" %> -->
-
+            <%= render "shared/flash_messages" %>
 
             <%= yield %>
 
         </div>
+
     </body>
 </html>

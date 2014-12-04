@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require layouts/columns.js
+//= require layouts/grid.js
+//= require layouts/help.js
+//= require layouts/nav.js
 //= require plugins/qtip2.js
 //= require plugins/jquery.jqplot.js
 //= require jqplotPlugins/jqplot.barRenderer.js
