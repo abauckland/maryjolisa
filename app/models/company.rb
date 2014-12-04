@@ -17,7 +17,7 @@ class Company < ActiveRecord::Base
   validates :address_1, :address_2,
    format: { with: CITY_REGEXP, message: "please enter a valid city name" }
 
-  validates :city, county,
+  validates :city, :county,
    format: { with: CITY_REGEXP, message: "please enter a valid city name" }
 
   validates :postcode,
