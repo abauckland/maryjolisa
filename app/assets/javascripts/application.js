@@ -22,8 +22,4 @@
 //= require jqplotPlugins/jqplot.categoryAxisRenderer.js
 //= require jqplotPlugins/jqplot.enhancedLegendRenderer.js
 //= require jqplotPlugins/jqplot.pointLabels.js
-//= require nav.js
-//= require columns.js
-//= require columns_linked.js
-//= require kshelp.js
 //= require_tree .
