@@ -12,20 +12,20 @@
 
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company"></div>
-                        <label class="label_80">Company Name:*</label>
+                        <label class="label_100">Company Name:*</label>
                         <span>
                             <%= f.text_field :name %>
                         </span></br>
                         
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_logo"></div>
-                        <label class="label_80">Logo:</label>
+                        <label class="label_100">Logo:</label>
                         <% if @company.logo? %>
                             <span>
                                 <%= image_tag(@company.logo_url(:thumb), {:height => "25px"}) %>
                             </span></br>
                             <!-- form input[text] --> 
-                            <label class="label_80"></label>
+                            <label class="label_100"></label>
                             <span>
                                 <%= f.file_field :logo %>
                             </span></br>
@@ -42,56 +42,56 @@
 
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_address_1"></div>
-                        <label class="label_80">Address 1:</label>
+                        <label class="label_100">Address 1:</label>
                         <span>
                             <%= f.text_field :address_1 %>
                         </span></br>
                         
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_address_2"></div>
-                        <label class="label_80">Address 2:</label>
+                        <label class="label_100">Address 2:</label>
                         <span>
                             <%= f.text_field :address_2 %>
                         </span></br>
     
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_city"></div>
-                        <label class="label_80">City:</label>
+                        <label class="label_100">City:</label>
                         <span>
                             <%= f.text_field :city %>
                         </span></br>
                         
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_county"></div>
-                        <label class="label_80">County:</label>
+                        <label class="label_100">County:</label>
                         <span>
                             <%= f.text_field :county %>
                         </span></br>
                         
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_postcode"></div>
-                        <label class="label_80">Postcode:</label>
+                        <label class="label_100">Postcode:</label>
                         <span>
                             <%= f.text_field :postcode %>
                         </span></br>
 
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_phone"></div>
-                        <label class="label_80">Tel:</label>
+                        <label class="label_100">Tel:</label>
                         <span>
-                            <%= f.text_field :phone %>
+                            <%= f.text_field :tel %>
                         </span></br>
     
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_alt_phone"></div>
-                        <label class="label_80">Alt. Tel:</label>
+                        <label class="label_100">Alt. Tel:</label>
                         <span>
-                            <%= f.text_field :alt_phone %>
+                            <%= f.text_field :alt_tel %>
                         </span></br>
     
                         <!-- form input[email] --> 
                         <div class="form_tooltip" id="company_email"></div>
-                        <label class="label_80">E-mail:</label>
+                        <label class="label_100">E-mail:</label>
                         <span>
                             <%= f.email_field :email, {placeholder: 'e.g. demo@example.com'} %>
                         </span></br>
@@ -103,14 +103,14 @@
 
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_reg_no"></div>
-                        <label class="label_80">Registration No:</label>
+                        <label class="label_100">Registration No:</label>
                         <span>
                             <%= f.text_field :reg_no %>
                         </span></br>
 
                         <!-- form input[text] --> 
                         <div class="form_tooltip" id="company_vat_no"></div>
-                        <label class="label_80">VAT No:</label>
+                        <label class="label_100">VAT No:</label>
                         <span>
                             <%= f.text_field :vat_no %>
                         </span></br>

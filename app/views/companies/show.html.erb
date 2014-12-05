@@ -29,10 +29,6 @@
                         <span><%= @company.domain %></span></br>
 
                         <!-- show text line --> 
-                        <label class="label_80">Surname:</label>
-                        <span><%= @customer.surname %></span></br>
-
-                        <!-- show text line --> 
                         <label class="label_80">Logo:</label>
                         <span><%= image_tag(@company.logo_url(:thumb)) if @company.logo? %></span></br>
 
