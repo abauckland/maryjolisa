@@ -47,7 +47,7 @@ gem 'sprig', '~> 0.1'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'mjweb', git: "git@github.com:abauckland/mjweb.git", branch: "master"
-#gem 'mjbook', git: "git@github.com:abauckland/mjbook.git", branch: "master"
+gem 'mjbook', git: "git@github.com:abauckland/mjbook.git", branch: "master"
 
 group :development do
   gem 'capistrano', '~> 3.1'
