@@ -5,8 +5,8 @@
   @include border-radius(0.5rem);
 //  @include shadow-all(0px 0px 5px #aeaeae);  
 //  @include light_grey_32_gradient; 
-  margin: 5px 10px 0px 10px;
-  padding: 1px 10px 0px 10px; 
+  margin: 0px 10px 0px 10px;
+  padding: 1px 12px 0px 12px; 
 
   background: #c2c2c2;
   background-image: -webkit-linear-gradient(top, #c2c2c2, #adadad);
@@ -17,78 +17,83 @@
 
 }
 
-.filter_band .float_right{float: right;}
-
-.filter_band div div{
-  float: left;
-  margin: 3px 0px 4px 0px;  
+.filter_right{
+  float: right;
 }
 
-.filter_band label.select{
+.filter_right div{
+  float: right;
+}
+
+.filter_right a.option_button{
+  float: right;
+  margin: 3px 0px 4px 10px;
+  @include title-button-green;
+}
+
+
+.filter_left{
+  overflow: hidden;
+}
+
+.filter_left div{
+  float: left;
+}
+
+
+.filter_left div{
+  width: 385px;
+  margin: 4px 10px 4px 0px;
+}
+
+.filter_left label.select{
   padding-top: 4px;
   margin-right:2px;
   font-weight: bold;
   width: 60px;
 }
 
-.filter_band label.date{
+.filter_left label.date{
   padding-top: 4px;
   margin-right:2px;
   font-weight: bold;
-  width: 63px;
+  width: 65px;
   text-align: right;
 }
 
 //form footer submit and cancel buttons
-.filter_band select{
+.filter_left select{
   float: left;
-  margin: 0px 10px 0px 2px;
+  margin: 0px 0px 0px 2px;
   padding: 2px 0px 2px 0px;
   width: 320px;
 }
-  @media screen and (max-width: $phone-landscape) {
-    .filter_band select{
-      margin: 0px 0px 0px 2px;
-    }
-  }
-
 
 //form footer submit and cancel buttons
-.filter_band input[type="date"]{
+.filter_left input[type=date]{
   float: left;
-  width: 127px;
+  width: 125px;
 }
 
+
 //form footer submit and cancel buttons
-.filter_band input[type="submit"]{
+.filter_left input[type=submit]{
   float: left;
-  margin: 3px 0px 0px 10px;
+  margin: 3px 0px 4px 0px;
   width: auto;
   @include title-button-orange;
 }
-  @media screen and (max-width: 898px) {
-    .filter_band input[type="submit"]{
-      margin: 0px 0px 0px 0px;
-    }
-  }
-  @media screen and (max-width: 850px) {
-    .filter_band input[type="submit"]{
-      margin: 3px 0px 0px 10px;
-    }
-  }
-  @media screen and (max-width: 503px) {
-    .filter_band input[type="submit"]{
-      margin: 0px 0px 0px 0px;
-    }
-  }
 
-.float_right input[type="submit"] {  
-  float: right;
+.filter_right input[type="submit"] {
   @include menu_icons(-1000px);
   border: 0px;
-  margin: 1px 0px 0px 5px;
+  margin: 5px 0px 0px 5px;
   padding: 0px 0px 0px 0px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   font-size: 0px;
 }
+
+
 
