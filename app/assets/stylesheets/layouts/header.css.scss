@@ -12,10 +12,18 @@
 
 .header figure{
   float: left;
-  margin: 7px 0px 0px 8px;
+  margin: 7px 0px 6px 8px;
   padding: 0px;
   }
 
+.header_text{
+  float: left;
+  margin: 13px 0px 0px 8px;
+  font-family: "Trebuchet MS", Trebuchet, "Liberation Sans", sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #fff;
+  }
 
 //.app_logout{  
 //  float: right;
