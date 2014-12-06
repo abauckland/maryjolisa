@@ -1,6 +1,5 @@
 //core-ui
 @import "core";
-//@import "buttons";
 
 .header{
   margin: 0px 10px 0px 10px;
@@ -12,7 +11,7 @@
 
 .header figure{
   float: left;
-  margin: 7px 0px 6px 8px;
+  margin: 7px 0px 0px 8px;
   padding: 0px;
   }
 
@@ -24,25 +23,3 @@
   font-size: 1.4rem;
   color: #fff;
   }
-
-//.app_logout{  
-//  float: right;
-//  margin: 13px 8px 0px 0px;
-//  font-family: $heading_font;
-//  @include small-button;
-//  @include red-button;
-//  @include shadow-all(0px 0px 5px #aeaeae);
-//  border: 1px solid #000;
-//    a{color:#ffffff;
-//      text-decoration: none;
-//      cursor: pointer;
-//      &:hover{color: #ffffff;}
-//      &:visited{color: #ffffff;}
-//    }
-//  }
-//  @media screen and (max-width: $tablet-protrait) {
-//    .app_logout {
-
-//    }  
-//  } 
-
