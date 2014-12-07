@@ -1,4 +1,4 @@
-set :stage
+set :stage, :staging
 
 set :user, "manager"
 set :domain, "85.159.208.210"

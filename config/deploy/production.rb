@@ -1,4 +1,4 @@
-set :production
+set :stage, :production
 
 set :user, "manager"
 set :domain, "85.159.214.151"
