@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: 3ddbdd7f0689c4e8b813967773b1047d9df8f47e
+  revision: f7e16de91e943940dd17a81a64120047350ab59a
   branch: master
   specs:
     mjbook (0.0.1)
@@ -66,9 +66,6 @@ GEM
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
     bcrypt (3.1.9-x86-mingw32)
-    bugsnag (2.5.1)
-      httparty (>= 0.6, < 1.0)
-      multi_json (~> 1.0)
     builder (3.2.2)
     capistrano (3.3.3)
       capistrano-stats (~> 1.0.3)
@@ -170,9 +167,6 @@ GEM
     formatador (0.2.5)
     geocoder (1.2.6)
     hike (1.2.3)
-    httparty (0.13.3)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -190,7 +184,6 @@ GEM
     mini_portile (0.6.1)
     minitest (5.4.3)
     multi_json (1.10.1)
-    multi_xml (0.5.5)
     mysql2 (0.3.17)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -286,7 +279,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bugsnag
   capistrano (~> 3.1)
   capistrano-bundler (~> 1.1.2)
   capistrano-rails (~> 1.1)
