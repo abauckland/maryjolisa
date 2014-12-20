@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112105971) do
+ActiveRecord::Schema.define(version: 20141204123386) do
 
   create_table "companies", force: true do |t|
     t.string   "name",                         null: false
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20141112105971) do
   add_index "companies", ["retail_subdomain"], name: "index_companies_on_retail_subdomain", using: :btree
 
   create_table "helps", force: true do |t|
-    t.string   "item",       default: "Help text to be added"
-    t.string   "text",       default: "Help text to be added"
+    t.string   "item"
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 20141112105971) do
   create_table "mjbook_companyaccounts", force: true do |t|
     t.integer  "company_id"
     t.string   "name"
+    t.string   "provider"
+    t.string   "code"
+    t.string   "number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "code",       limit: 45
-    t.string   "ref",        limit: 45
   end
 
   create_table "mjbook_customers", force: true do |t|
@@ -77,23 +77,31 @@ ActiveRecord::Schema.define(version: 20141112105971) do
     t.datetime "updated_at"
   end
 
+  create_table "mjbook_expenditems", force: true do |t|
+    t.integer  "expend_id"
+    t.integer  "expense_id"
+    t.integer  "salary_id"
+    t.integer  "transfer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "mjbook_expends", force: true do |t|
+    t.integer  "exp_type"
     t.integer  "company_id"
     t.integer  "user_id"
-    t.integer  "expense_id"
     t.integer  "paymethod_id"
     t.integer  "companyaccount_id"
     t.string   "expend_receipt"
     t.datetime "date"
     t.string   "ref"
-    t.decimal  "price",                       precision: 8, scale: 2, default: 0.0
-    t.decimal  "vat",                         precision: 8, scale: 2, default: 0.0
-    t.decimal  "total",                       precision: 8, scale: 2, default: 0.0
+    t.decimal  "price",             precision: 8, scale: 2, default: 0.0
+    t.decimal  "vat",               precision: 8, scale: 2, default: 0.0
+    t.decimal  "total",             precision: 8, scale: 2, default: 0.0
     t.text     "note"
-    t.string   "status"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "exp_type",          limit: 1
   end
 
   create_table "mjbook_expenses", force: true do |t|
@@ -108,26 +116,29 @@ ActiveRecord::Schema.define(version: 20141112105971) do
     t.datetime "due_date"
     t.decimal  "price",         precision: 8, scale: 2
     t.decimal  "vat",           precision: 8, scale: 2
+    t.decimal  "total",         precision: 8, scale: 2
     t.string   "receipt"
     t.integer  "recurrence"
     t.string   "ref"
     t.string   "supplier_ref"
-    t.integer  "status"
+    t.integer  "state"
+    t.integer  "expend_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "total",         precision: 8, scale: 2
   end
 
   create_table "mjbook_hmrcexpcats", force: true do |t|
     t.integer  "company_id"
     t.string   "category"
-    t.integer  "hmrcgroup_id"
+    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mjbook_hmrcgroups", force: true do |t|
-    t.string "group", limit: 45
+    t.string   "group"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "mjbook_ingroups", force: true do |t|
@@ -173,7 +184,7 @@ ActiveRecord::Schema.define(version: 20141112105971) do
     t.decimal  "price",          precision: 8, scale: 2, default: 0.0
     t.decimal  "vat_due",        precision: 8, scale: 2, default: 0.0
     t.decimal  "total",          precision: 8, scale: 2, default: 0.0
-    t.integer  "status"
+    t.integer  "state"
     t.datetime "date"
     t.integer  "invoiceterm_id"
     t.integer  "invoicetype_id"
@@ -182,12 +193,12 @@ ActiveRecord::Schema.define(version: 20141112105971) do
   end
 
   create_table "mjbook_invoiceterms", force: true do |t|
-    t.integer  "company_id",            null: false
-    t.integer  "period",                null: false
-    t.text     "terms",                 null: false
+    t.integer  "company_id"
+    t.string   "ref"
+    t.integer  "period"
+    t.text     "terms"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "ref",        limit: 45, null: false
   end
 
   create_table "mjbook_invoicetypes", force: true do |t|
@@ -219,31 +230,18 @@ ActiveRecord::Schema.define(version: 20141112105971) do
     t.datetime "updated_at"
   end
 
-  create_table "mjbook_misccategories", force: true do |t|
-    t.integer  "company_id"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "mjbook_miscs", force: true do |t|
-    t.integer  "misccategory_id"
-    t.string   "item"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "mjbook_payments", force: true do |t|
     t.integer  "user_id"
     t.integer  "invoice_id"
+    t.integer  "project_id"
     t.integer  "paymethod_id"
     t.integer  "companyaccount_id"
     t.decimal  "price",             precision: 8, scale: 2, default: 0.0
-    t.decimal  "vat_due",           precision: 8, scale: 2, default: 0.0
+    t.decimal  "vat",               precision: 8, scale: 2, default: 0.0
     t.decimal  "total",             precision: 8, scale: 2, default: 0.0
     t.datetime "date"
     t.text     "note"
-    t.string   "status"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -265,16 +263,16 @@ ActiveRecord::Schema.define(version: 20141112105971) do
     t.integer  "company_id"
     t.integer  "productcategory_id"
     t.string   "item"
-    t.decimal  "quantity",                     precision: 8, scale: 0
+    t.decimal  "quantity",           precision: 8, scale: 0
     t.integer  "unit_id"
-    t.decimal  "rate",                         precision: 8, scale: 2
-    t.decimal  "price",                        precision: 8, scale: 2
+    t.decimal  "rate",               precision: 8, scale: 2
+    t.decimal  "price",              precision: 8, scale: 2
     t.integer  "vat_id"
-    t.decimal  "vat_due",                      precision: 8, scale: 2
-    t.decimal  "total",                        precision: 8, scale: 2
+    t.decimal  "vat_due",            precision: 8, scale: 2
+    t.decimal  "total",              precision: 8, scale: 2
+    t.integer  "linetype"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "linetype",           limit: 1
   end
 
   create_table "mjbook_projects", force: true do |t|
@@ -325,7 +323,7 @@ ActiveRecord::Schema.define(version: 20141112105971) do
     t.string   "title"
     t.string   "customer_ref"
     t.datetime "date"
-    t.integer  "status"
+    t.integer  "state"
     t.integer  "quoteterm_id"
     t.decimal  "price",        precision: 8, scale: 2, default: 0.0
     t.decimal  "vat_due",      precision: 8, scale: 2, default: 0.0
@@ -335,31 +333,10 @@ ActiveRecord::Schema.define(version: 20141112105971) do
   end
 
   create_table "mjbook_quoteterms", force: true do |t|
-    t.integer  "company_id",            null: false
-    t.integer  "period",                null: false
-    t.text     "terms",                 null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "ref",        limit: 45, null: false
-  end
-
-  create_table "mjbook_ratecategories", force: true do |t|
     t.integer  "company_id"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "mjbook_rates", force: true do |t|
-    t.integer  "company_id"
-    t.integer  "ratecategory_id"
-    t.string   "item"
-    t.decimal  "quantity",        precision: 8, scale: 0
-    t.integer  "unit_id"
-    t.decimal  "cost",            precision: 8, scale: 2
-    t.integer  "vat_id"
-    t.decimal  "vat",             precision: 3, scale: 0
-    t.decimal  "price",           precision: 8, scale: 2
+    t.string   "ref"
+    t.integer  "period"
+    t.text     "terms"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -367,30 +344,10 @@ ActiveRecord::Schema.define(version: 20141112105971) do
   create_table "mjbook_salaries", force: true do |t|
     t.integer  "company_id"
     t.integer  "user_id"
-    t.decimal  "total",                precision: 8, scale: 2, default: 0.0
+    t.decimal  "total",      precision: 8, scale: 2, default: 0.0
     t.datetime "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "status",     limit: 1
-  end
-
-  create_table "mjbook_servicecategories", force: true do |t|
-    t.integer  "company_id"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "mjbook_services", force: true do |t|
-    t.integer  "company_id"
-    t.integer  "servicecategory_id"
-    t.string   "item"
-    t.decimal  "quantity",           precision: 8, scale: 0
-    t.integer  "unit_id"
-    t.decimal  "cost",               precision: 8, scale: 2
-    t.integer  "vat_id"
-    t.decimal  "vat",                precision: 3, scale: 0
-    t.decimal  "price",              precision: 8, scale: 2
+    t.string   "state"
+    t.integer  "expend_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -413,6 +370,19 @@ ActiveRecord::Schema.define(version: 20141112105971) do
     t.string   "company_name"
     t.text     "notes"
     t.string   "vat_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mjbook_transfers", force: true do |t|
+    t.integer  "company_id"
+    t.integer  "user_id"
+    t.integer  "account_from_id"
+    t.integer  "account_to_id"
+    t.integer  "paymethod_id"
+    t.string   "total"
+    t.datetime "date"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -22,7 +22,7 @@
                         <label class="label_100">Logo:</label>
                         <% if @company.logo? %>
                             <span>
-                                <%= image_tag(@company.logo_url(:thumb), {:height => "25px"}) %>
+                                <%= image_tag(@company.logo_url, {:height => "25px"}) %>
                             </span></br>
                             <!-- form input[text] --> 
                             <label class="label_100"></label>

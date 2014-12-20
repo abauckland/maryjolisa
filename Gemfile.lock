@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: b5912f1e09fc21c0ec5ac0b28f1fc8ee1b13c42b
+  revision: cf7424533e82fa4c2f4d63b5d9d3a0b33bd93535
   branch: master
   specs:
     mjbook (0.0.1)
@@ -14,10 +14,10 @@ GIT
 
 GIT
   remote: git@github.com:abauckland/mjweb.git
-  revision: 1a2b17b92398729b95691e0a183e7c068982c1ad
+  revision: 06fe7b07b62d6b8284d4b46f4a55687545200aac
   branch: master
   specs:
-    mjweb (0.0.1)
+    mjweb (0.0.2)
       carrierwave
       colorist
       pundit
@@ -168,7 +168,7 @@ GEM
     formatador (0.2.5)
     geocoder (1.2.6)
     hike (1.2.3)
-    i18n (0.6.11)
+    i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
     jbuilder (2.2.5)
