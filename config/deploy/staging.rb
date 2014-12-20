@@ -12,7 +12,7 @@ set :deploy_to, "/home/#{fetch :user}/apps/#{fetch :application}"
 set :use_sudo, false
 
 set :ssh_options, {  
-  paranoid: false,
+#  paranoid: false,
   port: 63369,
   keys: ["C:/Users/Andrew/.ssh/myhq.ppk"],
   forward_agent: true,
