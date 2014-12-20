@@ -1,4 +1,4 @@
-  module PrintQuote
+  module PrintReceipt
     extend ActiveSupport::Concern
    
     include PrintHeader
@@ -8,33 +8,31 @@
     include PrintFooter
     include PrintPageNumbers
                  
-    include PrintQuoteHeader
-    include PrintQuoteDetail
-    include PrintQuoteTable
-    include PrintQuoteFooter
+    include PrintReceiptHeader
+    include PrintReceiptDetail
+    include PrintReceiptTable
+    include PrintReceiptFooter
         
-   def print_quote(quote, pdf)
+   def print_receipt(payment, pdf)
    
       pdf.repeat(:all) do
         ##HEADERS
         company_header(pdf)
-        quote_header(pdf)
+        receipt_header(pdf)
         ##QUOTE DETAILS
-        customer_details(quote.project.customer, pdf)
-        quote_details(quote, pdf)
+        customer_details(payment.project.customer, pdf)
+        receipt_details(payment, pdf)
         
         pdf.y = 192.mm
         table_header(pdf)
       
       end
       ##QUOTE_TABLE
-      quote_table(quote, pdf)
+      receipt_table(payment, pdf)
     
       ##FOOTERS
-      quote_total_footer(quote, pdf)
-      
-      quote_terms_footer(quote, pdf)
-      
+      receipt_total_footer(payment, pdf)
+            
       pdf.repeat(:all) do
         company_footer(pdf)        
       end

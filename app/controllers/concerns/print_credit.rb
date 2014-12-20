@@ -1,4 +1,4 @@
-  module PrintQuote
+  module PrintCredit
     extend ActiveSupport::Concern
    
     include PrintHeader
@@ -8,32 +8,30 @@
     include PrintFooter
     include PrintPageNumbers
                  
-    include PrintQuoteHeader
-    include PrintQuoteDetail
-    include PrintQuoteTable
-    include PrintQuoteFooter
+    include PrintCreditHeader
+    include PrintCreditDetail
+    include PrintCreditTable
+    include PrintCreditFooter
         
-   def print_quote(quote, pdf)
+   def print_credit(credit, pdf)
    
       pdf.repeat(:all) do
         ##HEADERS
         company_header(pdf)
-        quote_header(pdf)
+        credit_header(pdf)
         ##QUOTE DETAILS
-        customer_details(quote.project.customer, pdf)
-        quote_details(quote, pdf)
+        customer_details(credit.project.customer, pdf)
+        credit_details(credit, pdf)
         
         pdf.y = 192.mm
         table_header(pdf)
       
       end
       ##QUOTE_TABLE
-      quote_table(quote, pdf)
+      credit_table(credit, pdf)
     
       ##FOOTERS
-      quote_total_footer(quote, pdf)
-      
-      quote_terms_footer(quote, pdf)
+      credit_total_footer(credit, pdf)
       
       pdf.repeat(:all) do
         company_footer(pdf)        
