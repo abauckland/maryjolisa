@@ -7,6 +7,7 @@ class CreateMjbookPaymentitems < ActiveRecord::Migration
       t.integer :donation_id
       t.integer :miscpayment_id
       t.integer :transfer_id
+      
       t.timestamps
     end
   end
