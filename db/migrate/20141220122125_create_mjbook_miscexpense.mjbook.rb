@@ -10,9 +10,9 @@ class CreateMjbookMiscexpense < ActiveRecord::Migration
       t.integer :hmrcexpcat_id
       t.timestamp :date
       t.timestamp :due_date
-      t.decimal :price
-      t.decimal :vat
-      t.decimal :total
+      t.decimal :price, :precision => 8, :scale => 2, default: 0.00
+      t.decimal :vat, :precision => 8, :scale => 2, default: 0.00
+      t.decimal :total, :precision => 8, :scale => 2, default: 0.00
       t.string :item
       t.integer :provider_id
       t.string :provider_ref
