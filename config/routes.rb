@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :helps
 
   mount Mjweb::Engine, :at => "/"
-#  mount Mjbook::Engine, :at => "/"
+  mount Mjbook::Engine, :at => "/"
 
   root :to => redirect('/websites')
 
