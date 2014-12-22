@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: cf7424533e82fa4c2f4d63b5d9d3a0b33bd93535
+  revision: dd1858ffdd252c0cdefcea7b61dc84f3a3bf9ec7
   branch: master
   specs:
     mjbook (0.0.1)
@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: git@github.com:abauckland/mjweb.git
-  revision: 765e0817f9a43307660bbe140af33a0eb14da24b
+  revision: b19753d2bce831c5c597dee2fdd7f8d2a92a92e8
   branch: master
   specs:
     mjweb (0.0.2)
@@ -37,7 +37,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     CFPropertyList (2.2.8)
-    aasm (4.0.5)
+    aasm (4.0.7)
     actionmailer (4.1.2)
       actionpack (= 4.1.2)
       actionview (= 4.1.2)
