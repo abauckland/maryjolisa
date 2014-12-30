@@ -30,7 +30,7 @@
 
                         <!-- show text line --> 
                         <label class="label_80">Logo:</label>
-                        <span><%= image_tag(@company.logo_url(:thumb)) if @company.logo? %></span></br>
+                        <span><%= image_tag(@company.logo_url, {:height => "25px"}) if @company.logo? %></span></br>
 
 
                         </div>
