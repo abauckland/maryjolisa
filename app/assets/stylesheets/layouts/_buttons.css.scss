@@ -153,6 +153,16 @@
 .table_pdf_icon {@include menu_icons(-1000px); float: right; padding: 0px;}
 .table_csv_icon {@include menu_icons(-960px); float: right; padding: 0px;}
 
+.line_unlock_icon_show {@include menu_icons(-1280px); float: right; padding: 0px;}
+.line_unlock_icon_hidden {@include menu_icons(-1280px); display: none; float: right; padding: 0px;}
+
+.line_activate_icon_show {@include menu_icons(-1360px); float: right; padding: 0px;}
+.line_activate_icon_hidden {@include menu_icons(-1360px); display: none; float: right; padding: 0px;}
+
+.line_deactivate_icon_show {@include menu_icons(-1320px); float: right; padding: 0px;}
+.line_deactivate_icon_hidden {@include menu_icons(-1320px); display: none; float: right; padding: 0px;}
+
+
 //form action icons
 
 @mixin form_save_icon {@include form_icons(-320px);}
