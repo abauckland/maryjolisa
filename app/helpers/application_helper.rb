@@ -17,4 +17,9 @@ module ApplicationHelper
 #      root_url url_options.merge(subdomain: company.retail_subdomain, host: company.domain)
       root_url url_options.merge(subdomain: company.retail_subdomain, host: "myhq.org.uk")
     end
+    
+    def row_unlock_link(model, display)
+      link_to '', polymorphic_path([:unlock, model]), :method => :get, :remote => true, class: ('line_unlock_icon_' << display) , title: "unlock user"
+    end
+    
 end

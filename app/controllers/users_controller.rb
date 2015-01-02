@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     #if current_user.company_id == @user.company_id    
     authorize @user   
   end
+  
+  def unlock
+    
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

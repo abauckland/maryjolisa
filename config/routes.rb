@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :dashboards, :only => [:index]
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show] do
+    get :unlock, :on => :member
+  end
   resources :companies do
     resource :store, only: [:new, :create]
   end
