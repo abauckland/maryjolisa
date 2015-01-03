@@ -81,9 +81,20 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.smtp_settings = {
+    :tls => true,
+    :address => "secure.emailsrvr.com",
+    :port => 465,
+    :domain => "myhq.org.uk",
+    :user_name => "admin@myhq.org.uk",
+    :password => "bubble",
+    :authentication => :login
+  }
+
 
   # Always generate canonical URLs with HTTPS
   routes.default_url_options = {
@@ -91,5 +102,7 @@ Rails.application.configure do
     host:      "www.myhq.org.uk"
   }
 
-  config.action_mailer.default_url_options = routes.default_url_options.dup
+  config.action_mailer.default_url_options = routes.default_url_options.dup  
+  config.action_mailer.default_options = { from: "admin@myhq.org.uk" } 
+  
 end
