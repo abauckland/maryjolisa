@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   before_action :authenticate_user!
-  
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   #after_action :verify_authorized, unless: :devise_controller?
@@ -34,9 +33,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :surname, :email, :password, :password_confirmation, :first_name, :surname, :role, :company_id, :company_attributes => [:name, :subdomain, :domain]) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :surname, :email, :password, :password_confirmation, :current_password, :first_name, :surname, :role, :company_id, :company_attributes => [:name]) }
-
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :surname, :email, :password, :password_confirmation, :role, :company_id, :company_attributes => [:name, :subdomain, :domain]) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :surname, :email, :password, :password_confirmation, :current_password, :role, :company_id, :company_attributes => [:name]) }
   end
 
   def layout_by_resource
@@ -44,7 +42,7 @@ class ApplicationController < ActionController::Base
       'devise'
     elsif  controller_name == 'passwords' && action_name == 'new'
       'devise'
-    elsif  controller_name == 'unlocks' && action_name == 'new'
+    elsif  controller_name == 'unlocks' #&& action_name == 'new'
       'devise'
     else
       'application'
