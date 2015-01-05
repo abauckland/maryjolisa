@@ -28,7 +28,7 @@
 
     # POST /pages
     def create
-      @help = Help.new(help_param)
+      @help = Help.new(help_params)
       authorize @help
       if @help.save
       else
