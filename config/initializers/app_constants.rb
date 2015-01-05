@@ -10,4 +10,5 @@
     DATE_REGEXP = /(20[0-9][0-9])\S((02\S[012][0-9])|(0[469]\S([012][0-9]|30))|(0[13578]\S([012][0-9]|3[0-1]))|(1[012]\S([012][0-9]|3[0-1])))/
     IMAGE_REGEXP = /\A[a-zA-Z\S]+\z/
     TIME_REGEXP = /([0-1][0-9]|2[0-3]):[0-5][0-9]/ #format - HH:MM, 24 hours clock only
-    COLOUR_REGEXP = /\A#{1}(\h{6}|\h{3})\z/ #check for 6 or 3 character hex code
+#    COLOUR_REGEXP = /\A#{1}(\h{6}|\h{3})\z/ #check for 6 or 3 character hex code
+    COLOUR_REGEXP = /(?<=#)(?<!^)(\h{6}|\h{3})/ #check for 6 or 3 character hex code
