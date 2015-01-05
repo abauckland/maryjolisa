@@ -15,7 +15,7 @@ class Company < ActiveRecord::Base
    format: { with: NAME_REGEXP, message: "please enter a valid name" }
 
   validates :address_1, :address_2,
-   format: { with: CITY_REGEXP, message: "please enter a valid city name" }
+   format: { with: ADDRESS_REGEXP, message: "please enter a valid address" }
 
   validates :city, :county,
    format: { with: CITY_REGEXP, message: "please enter a valid city name" }
@@ -29,10 +29,12 @@ class Company < ActiveRecord::Base
 #  validates :email,
 
   validates :vat_no,
+    allow_blank: true,
     uniqueness: {message: "a company with this vat number is already in use"},
     format: { with: VAT_REGEXP, message: "please enter a valid vat number. Omit any spaces and where 'GB' prefix is included (optional) this must be capitals" }
 
   validates :reg_no,
+    allow_blank: true,
     uniqueness: {message: "a company with this registration number is already in use"},
     format: { with: REG_REGEXP, message: "please enter a valid registration number. Omit any spaces and 'SC' prefixes (for companies registered in Scotland) must be in capitals" }
 
