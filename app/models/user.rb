@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
     return first_name+' '+surname
   end
 
+  def phone_number
+    tel.unpack('A4A3A4').join(' ')
+  end
+
 end
