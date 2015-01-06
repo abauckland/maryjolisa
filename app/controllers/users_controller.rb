@@ -19,6 +19,24 @@ class UsersController < ApplicationController
     authorize @user   
   end
 
+    def activate
+      authorize @user
+      if @payment.activate!
+        respond_to do |format|
+          format.js   { render :activate, :layout => false }
+        end 
+      end 
+    end
+
+    def deactivate
+      authorize @user
+      if @payment.deactivate!
+        respond_to do |format|
+          format.js   { render :deactivate, :layout => false }
+        end 
+      end 
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
 

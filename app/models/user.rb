@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  include AASM
+
   belongs_to :company
 
   # Include default devise modules. Others available are:
@@ -10,6 +13,20 @@ class User < ActiveRecord::Base
   enum role: [:admin, :owner, :employee]
 
   accepts_nested_attributes_for :company
+
+  aasm :column => 'state' do
+
+    state :active, :initial => true
+    state :inactive
+
+    event :deactivate do
+      transitions :from => :active, :to => :inactive
+    end
+
+    event :activate do
+      transitions :from => :inactive, :to => :active
+    end
+  end
 
   def name
     return first_name+' '+surname

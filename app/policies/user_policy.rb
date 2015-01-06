@@ -10,14 +10,13 @@ class UserPolicy < Struct.new(:user, :record)
     def index?
       user.admin? || user.owner?
     end
-    
+
     def show?
       if user.admin? || user.owner?
         record.company_id == user.company_id
       end
     end
-    
-    
+
     def update?
       true
     end
@@ -25,8 +24,16 @@ class UserPolicy < Struct.new(:user, :record)
     def edit?
       user.admin? || user.owner?
     end
-    
+
     def create_acccount?
+      user.admin? || user.owner?
+    end
+
+    def activate?
+      user.admin? || user.owner?      
+    end
+
+    def deactivate?
       user.admin? || user.owner?
     end    
 end
