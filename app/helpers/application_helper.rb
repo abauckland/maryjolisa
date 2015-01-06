@@ -17,9 +17,13 @@ module ApplicationHelper
 #      root_url url_options.merge(subdomain: company.retail_subdomain, host: company.domain)
       root_url url_options.merge(subdomain: company.retail_subdomain, host: "myhq.org.uk")
     end
-    
-    def row_unlock_link(model, display)
-      link_to '', polymorphic_path([:unlock, model]), :method => :get, :remote => true, class: ('line_unlock_icon_' << display) , title: "unlock user"
+
+    def row_activate_link(model, display)
+      link_to '', polymorphic_path([:activate, model]), :method => :get, :remote => true, class: ('line_activate_icon_' << display) , title: "assign licence to user"
     end
-    
+
+    def row_deactivate_link(model, display)
+      link_to '', polymorphic_path([:deactivate, model]), :method => :get, :remote => true, class: ('line_deactivate_icon_' << display) , title: "remove user licence"
+    end
+
 end
