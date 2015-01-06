@@ -26,7 +26,7 @@ gem 'devise'
 gem 'devise-encryptable'
 gem 'pundit'
 gem 'geocoder'
-gem 'fog'
+gem 'fog', '= 1.23.0'
 gem 'carrierwave'
 gem 'rmagick', '= 2.13.3', require: false
 
