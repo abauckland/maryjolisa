@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_company, only: [:show, :activate, :deactivate]
+  before_action :set_user, only: [:show, :activate, :deactivate]
 
   # GET /users
   # GET /users.json
