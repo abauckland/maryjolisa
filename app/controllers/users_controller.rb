@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     def activate
       authorize @user
-      if @payment.activate!
+      if @user.activate!
         respond_to do |format|
           format.js   { render :activate, :layout => false }
         end 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
     def deactivate
       authorize @user
-      if @payment.deactivate!
+      if @user.deactivate!
         respond_to do |format|
           format.js   { render :deactivate, :layout => false }
         end 
