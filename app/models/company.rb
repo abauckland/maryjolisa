@@ -15,15 +15,18 @@ class Company < ActiveRecord::Base
    format: { with: NAME_REGEXP, message: "please enter a valid name" }
 
   validates :address_1, :address_2,
+    allow_blank: true,
    format: { with: ADDRESS_REGEXP, message: "please enter a valid address" }
 
   validates :city, :county,
+    allow_blank: true,
    format: { with: CITY_REGEXP, message: "please enter a valid city name" }
 
-  validates :postcode,
-    format: { with: POSTCODE_REGEXP, message: "please enter a valid postcode, including a space between the area and street codes e.g.SK2 6PL" }
+#  validates :postcode,
+#    format: { with: POSTCODE_REGEXP, message: "please enter a valid postcode, including a space between the area and street codes e.g.SK2 6PL" }
 
   validates :tel, :alt_tel,
+    allow_blank: true,
     format: { with: PHONE_REGEXP, message: "please enter a valid phone number. Phone number should start with a '0'" }
 
 #  validates :email,
