@@ -22,8 +22,8 @@ class Company < ActiveRecord::Base
     allow_blank: true,
    format: { with: CITY_REGEXP, message: "please enter a valid city name" }
 
-#  validates :postcode,
-#    format: { with: POSTCODE_REGEXP, message: "please enter a valid postcode, including a space between the area and street codes e.g.SK2 6PL" }
+  validates :postcode,
+    format: { with: POSTCODE_REGEXP, message: "please enter a valid postcode, including a space between the area and street codes e.g.SK2 6PL" }
 
   validates :tel, :alt_tel,
     allow_blank: true,
@@ -46,8 +46,8 @@ class Company < ActiveRecord::Base
   validates :subdomain, :retail_subdomain, presence: true, length: { maximum: 20 },
     format: { with: SUBDOMAIN_REGEXP, message: "can only contain letters and dashes" }
 
-  validate :subdomain_uniqueness, :retail_subdomain_uniqueness
-  validate :subdomain_not_changed, :retail_subdomain_not_changed, :if => :persisted?  
+  validate :retail_subdomain_uniqueness
+  validate :retail_subdomain_not_changed, :if => :persisted?  
 
   def name=(text)
     super(text.downcase)
@@ -107,10 +107,10 @@ class Company < ActiveRecord::Base
     self.retail_subdomain ||= "#{subdomain}-store"
   end
 
-  def subdomain_uniqueness
-    return if subdomain.blank? || !subdomain_changed?
-    errors.add(:subdomain, :taken) if given_subdomain_exists?(subdomain)
-  end
+#  def subdomain_uniqueness
+#    return if subdomain.blank? || !subdomain_changed?
+#    errors.add(:subdomain, :taken) if given_subdomain_exists?(subdomain)
+#  end
 
   def retail_subdomain_uniqueness
     return if retail_subdomain.blank? || !retail_subdomain_changed?
@@ -118,11 +118,7 @@ class Company < ActiveRecord::Base
   end
 
   def given_subdomain_exists?(domain)
-    Company.where("subdomain = :domain OR retail_subdomain = :domain", domain: domain).any?
-  end
-
-  def subdomain_not_changed
-    errors.add(:subdomain, "cannot be changed") if subdomain_changed?
+    Company.where("retail_subdomain = :domain", domain: domain).any?
   end
 
   def retail_subdomain_not_changed
