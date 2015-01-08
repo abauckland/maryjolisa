@@ -14,10 +14,12 @@ module DeviseHelper
                       resource: resource.class.model_name.human.downcase)
 
     html = <<-HTML
-    <div class="column_error">
-      <p>#{sentence}</p>
-      <ul>#{messages}</ul>
-    </div>
+        <div class="row">
+          <div class="form_error">
+            <p>#{sentence}</p>
+            <ul>#{messages}</ul>
+          </div>
+      </div>
     HTML
 
     html.html_safe
