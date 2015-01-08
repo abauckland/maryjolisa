@@ -1,6 +1,6 @@
     SUBDOMAIN_REGEXP = /\A[a-z\-]+\z/
     NAME_REGEXP = /\A[a-zA-Z\-]+\z/ #letters, and hyphen only
-    POSTCODE_REGEXP = /\A(a-zA-Z0-9\s{6,8})\z/ #checks format only not validity of the postcode, UK postcode formatting only
+    POSTCODE_REGEXP = /\A([a-zA-Z0-9\s]{6,8})\z/ #checks format only not validity of the postcode, UK postcode formatting only
     PHONE_REGEXP = /\A^([0]{1})([0-9\s]{8,12})\z/ #must start with '0', can have upto 2 spaces
     REG_REGEXP = /((^([SC]{2}[0-9]{6})$)|([0-9]{8})$)/ #no spaces allowed, 'SC' prefix where used must be capitals
     ADDRESS_REGEXP = /\A[a-zA-Z0-9\-\s]+\z/ #letters, numbers, hyphen and space only  
