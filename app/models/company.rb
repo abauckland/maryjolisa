@@ -101,6 +101,12 @@ class Company < ActiveRecord::Base
     Mjweb::Design.create(:company_id => self.id)
     Mjweb::Detail.create(:company_id => self.id)
     Mjweb::Hour.create(:company_id => self.id)
+    #Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => "mileage", :groupd_id => )
+    #Mjbook::Mileagemode.create(:company_id => self.id, :mode => "car", :rate => 0, :hmrc_rate => 0.45)
+    #Mjbook::Mileagemode.create(:company_id => self.id, :mode => "van", :rate => 0, :hmrc_rate => 0.45)
+    #Mjbook::Mileagemode.create(:company_id => self.id, :mode => "motorcycle", :rate => 0, :hmrc_rate => 0.24)
+    #Mjbook::Mileagemode.create(:company_id => self.id, :mode => "cycle", :rate => 0, :hmrc_rate => 0.20)
+
   end
 
   def set_default_retail_subdomain
