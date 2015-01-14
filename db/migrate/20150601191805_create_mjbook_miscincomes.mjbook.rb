@@ -1,5 +1,5 @@
 # This migration comes from mjbook (originally 20150108113000)
-class CreateMjbookIncomes < ActiveRecord::Migration
+class CreateMjbookMiscincomes < ActiveRecord::Migration
   def change
     create_table :mjbook_miscincomes do |t|
       t.integer :company_id
