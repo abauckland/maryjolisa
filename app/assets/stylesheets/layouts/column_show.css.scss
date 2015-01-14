@@ -12,10 +12,25 @@ article label.label_80 {
     width: 80px;
 }
 
+article label.label_icon {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 0px 0px 0px 10px;
+    background: asset_url('feature_item.png') 0px 0px no-repeat;
+}
+
 article span {
     display: block;
     overflow: hidden;
     padding: 0 5px 0 0;
+}
+
+article span.feature_text {
+    display: block;
+    overflow: hidden;
+    padding: 0 5px 0 0;
+    font-size: 1.6rem;
 }
 
 article span ul{
