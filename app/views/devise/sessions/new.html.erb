@@ -26,23 +26,23 @@
                         <%= f.password_field :password, autocomplete: "off" %>
                     </span></br>
 
+                    <!-- link button: full width -->
+                    <label class="label_80"></label>
+                    <span>
+                        <%= f.submit "Sign in", class: "form_button_full"%>
+                    </span></br>
+
+
                </fieldset>
             </div>
 
+
 <%= render "devise/shared/links" %>
 
-<!-- column footer start--> 
-            <div class="row">
-                <div class="form_footer">
-                    <%= f.submit "Sign in"%>
-                </div>
-            </div>
-                <% end %>
-        </div>
     </div>
 
     <div class="col-1-3 column_2">
-        <div class="border blank_column">
+        <div class="border">
 
             <div class="row">
                 <div class="column_title">
