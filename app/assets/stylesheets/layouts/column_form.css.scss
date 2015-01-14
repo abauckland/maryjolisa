@@ -50,6 +50,13 @@ form a.form_button{
   @include title-button-grey;
 }
 
+form a.form_button_full{
+  float: left;
+  margin: 0px 0px 4px 0px;
+  width: 100%;
+  @include title-button-green;
+}
+
 
 form span {
     display: block;
@@ -131,6 +138,16 @@ div.label_90{width: 90px;}
   @include form-button;
   padding-left: 0px; //override default settings
 }
+
+
+//image drop down select
+.form_image_select {
+    content:"";
+    height: 60px;
+    clear:both;
+    padding-bottom: 10px;
+}
+
 
 
 .blank_select{}
