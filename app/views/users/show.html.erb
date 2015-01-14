@@ -32,6 +32,10 @@
                         <!-- show text line -->
                         <label class="label_80">Last Sign In:</label>
                         <span><%= @user.last_sign_in_at.strftime("%A %-d %B %Y") %></span></br>
+
+                        <!-- show text line -->
+                        <label class="label_80">Status:</label>
+                        <span><%= @user.state %></span></br>
                         
                         </div>
                     </article>
