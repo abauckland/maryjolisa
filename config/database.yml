@@ -22,7 +22,12 @@ test:
   <<: *default
   database: myhq_test
   password: 144bubble
+  
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: manager
+  host: myhqmysql
   database: myhq_prod
-  password: 144bubble  
+  password: 144bubble
