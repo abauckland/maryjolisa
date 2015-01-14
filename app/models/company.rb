@@ -12,7 +12,7 @@ class Company < ActiveRecord::Base
   validates :name,
    presence: true,
    uniqueness: { case_sensitive: false, message: "a company with the same name already exists" },
-   format: { with: NAME_REGEXP, message: "please enter a valid name" }
+   format: { with: COMPANY_NAME_REGEXP, message: "please enter a valid name" }
 
   validates :address_1, :address_2,
     allow_blank: true,
