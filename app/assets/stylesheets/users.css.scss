@@ -5,23 +5,24 @@ $tab_lrg_menu: 940px;
 $tab_sml_menu: 780px;
 $mob_menu: 520px;
 
-.user_name      {@include name}
+.user_name      {display: table-cell; vertical-align: top;}
 .user_email     {@include email}
 .user_phone     {@include phone}
 .user_last_login{@include date}
-.user_status    {display: table-cell; vertical-align: top;}
+.user_status    {@include state}
 
 @media screen and (max-width: $lrg_menu) {
 
 }
 
 @media screen and (max-width: $tab_lrg_menu) {
-
+  .user_last_login{display: none;}
 }
 
 @media screen and (max-width: $tab_sml_menu) {
-
+  .user_phone     {display: none;}
 }
 
 @media screen and (max-width: $mob_menu) {
+  .user_email     {display: none;}
 }
