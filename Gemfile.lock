@@ -1,10 +1,10 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: 1d1232ab828533c7e0c5d920e307df5f582ae07a
+  revision: 893827eefd7d13260d6a16c5101491a164f7de10
   branch: master
   specs:
     mjbook (0.0.1)
-      aasm (= 4.0.5)
+      aasm
       carrierwave
       prawn
       prawn-table
@@ -36,7 +36,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    aasm (= 4.0.5)
+    aasm (4.0.8)
     actionmailer (4.1.2)
       actionpack (= 4.1.2)
       actionview (= 4.1.2)
