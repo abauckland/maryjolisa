@@ -19,7 +19,7 @@
                             <th class="user_name">Name</th>
                             <th class="user_email">E-mail</th>
                             <th class="user_phone">Telephone</th>
-                            <th class="user_last_login">Last Logged In</th>
+                            <th class="user_last_login">Last Login</th>
                             <th class="user_status">Status</th>
                             <th class="row_button no_buttons_2"></th>
                         </tr>
@@ -34,7 +34,7 @@
                             <td class="user_email"><%= user.email %></td>
                             <td class="user_phone"><%= user.phone_number if user.tel? %></td>
                             <td class="user_last_login"><%= user.last_sign_in_at.strftime("%d/%m/%y") %></td>
-                            <td id="<%= user.id %>_status" class="user_state"><%= user.state %></td>
+                            <td id="<%= user.id %>_status" class="user_status"><%= user.state %></td>
                             <td id="<%= user.id %>_links" class="row_button no_buttons_2">
                             	<% if user.active? %>
                             		<%= row_deactivate_link(user, 'show') %>
