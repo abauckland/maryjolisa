@@ -50,25 +50,6 @@ class Company < ActiveRecord::Base
   validate :retail_subdomain_uniqueness
   validate :retail_subdomain_not_changed, :if => :persisted?  
 
-  def name=(text)
-    super(text.downcase)
-  end
-
-  def address_1=(text)
-    super(text.downcase)
-  end
-
-  def address_2=(text)
-    super(text.downcase)
-  end
-
-  def city=(text)
-    super(text.downcase)
-  end
-
-  def county=(text)
-    super(text.downcase)
-  end
 
   def email=(text)
     super(text.downcase)
