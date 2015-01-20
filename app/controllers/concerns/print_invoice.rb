@@ -1,4 +1,4 @@
-  module PrintQuote
+  module PrintInvoice
     extend ActiveSupport::Concern
    
     include PrintHeader
@@ -13,7 +13,7 @@
     include PrintInvoiceTable
     include PrintInvoiceFooter
         
-   def print_quote(invoice, pdf)
+   def print_invoice(invoice, pdf)
    
       pdf.repeat(:all) do
         ##HEADERS
