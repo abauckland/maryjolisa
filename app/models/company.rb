@@ -95,6 +95,9 @@ class Company < ActiveRecord::Base
     Mjbook::Mileagemode.create(:company_id => self.id, :mode => "motorcycle", :rate => 0, :hmrc_rate => 0.24)
     Mjbook::Mileagemode.create(:company_id => self.id, :mode => "cycle", :rate => 0, :hmrc_rate => 0.20)
 
+    Mjbook::Setting.create(:company_id => self.id)
+
+
   end
 
   def set_default_retail_subdomain
