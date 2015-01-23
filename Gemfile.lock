@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: git@github.com:abauckland/mjweb.git
-  revision: 0f0257c1e4ba52d53dd49b1652c9c27dc171abfc
+  revision: 05ec5eec43d53b893a1e018f2ebf9b8ae69441d9
   branch: master
   specs:
     mjweb (0.0.2)
