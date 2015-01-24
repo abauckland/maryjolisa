@@ -42,6 +42,8 @@ class ApplicationController < ActionController::Base
       'devise'
     elsif  controller_name == 'passwords' && action_name == 'new'
       'devise'
+    elsif  controller_name == 'passwords' && action_name == 'edit'
+      'devise'
     elsif  controller_name == 'unlocks' #&& action_name == 'new'
       'devise'
     else
