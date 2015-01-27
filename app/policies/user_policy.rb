@@ -22,7 +22,7 @@ class UserPolicy < Struct.new(:user, :record)
     end
 
     def edit?
-      user.admin? || user.owner?
+      true
     end
 
     def create_acccount?
@@ -30,7 +30,7 @@ class UserPolicy < Struct.new(:user, :record)
     end
 
     def activate?
-      user.admin? || user.owner?      
+      user.admin? || user.owner?
     end
 
     def deactivate?
