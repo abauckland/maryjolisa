@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: 89db1942c6ad32cfbad3cf6a791971d9e9551c29
+  revision: d2e8a2a007bc01e123c4319a7632df214f34f5b8
   branch: master
   specs:
     mjbook (0.0.1)
