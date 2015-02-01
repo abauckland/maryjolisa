@@ -1,32 +1,31 @@
-
 class HelpPolicy < Struct.new(:user, :help)
-        
+
     def index?
       user.admin?
     end
-    
+
     def show?
-      index?
+      true
     end
-    
+
     def new?
       index?
     end
-    
+
     def create?
       index?
-    end    
+    end
 
     def edit?
       index?
     end
-    
+
     def update?
       index?
     end
-    
+
     def destroy?
       index?
     end 
-       
+
 end

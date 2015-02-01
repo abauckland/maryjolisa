@@ -14,11 +14,11 @@
     # GET /helps/1
     def show
       @help = Help.where(:item => params[:id]).first
-      render :text=> @help.text 
+      render :text => @help.text 
     end
 
     def new
-      @help = Help.new      
+      @help = Help.new
     end
 
     # GET /helps/1/edit
@@ -50,6 +50,7 @@
 
     # DELETE /pages/1
     def destroy
+      authorize @help
       @help.destroy
       redirect_to helps_url, notice: 'help item was successfully destroyed.'
     end
