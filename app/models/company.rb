@@ -42,9 +42,10 @@ class Company < ActiveRecord::Base
     uniqueness: {message: "a company with this registration number is already in use"},
     format: { with: REG_REGEXP, message: "please enter a valid registration number. Omit any spaces and 'SC' prefixes (for companies registered in Scotland) must be in capitals" }
 
+  validates :subdomain, presence: true, length: { maximum: 20 },
+    format: { with: COMPANY_SUBDOMAIN_REGEXP, message: "can only contain letters, numbers and dashes" }
 
-
-  validates :subdomain, :retail_subdomain, presence: true, length: { maximum: 20 },
+  validates :retail_subdomain, presence: true, length: { maximum: 20 },
     format: { with: SUBDOMAIN_REGEXP, message: "can only contain letters and dashes" }
 
   validate :retail_subdomain_uniqueness

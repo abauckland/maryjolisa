@@ -1,3 +1,4 @@
+    COMPANY_SUBDOMAIN_REGEXP = /\A[a-z0-9\-]+\z/
     SUBDOMAIN_REGEXP = /\A[a-z\-]+\z/
     NAME_REGEXP = /\A[a-zA-Z\-]+\z/ #letters, and hyphen only
     COMPANY_NAME_REGEXP = /\A[a-zA-Z0-9\-\s]+\z/ #letters, numbers, hyphen and space only
