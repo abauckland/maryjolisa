@@ -26,7 +26,7 @@ $(document).ready(function(){
 	        my: 'top center',  // Position my top left...
 	        at: 'bottom center', // at the bottom right of...
 	    }
-	})
+	});
 	
 	
 	$("div.help_tooltip").dblclick(function (){
