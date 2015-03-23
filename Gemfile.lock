@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: git@github.com:abauckland/mjweb.git
-  revision: d42f296234992c4ce74aa4ef6b7d945e852af14b
+  revision: db0046119a26d681249f10c0498c807335ab41ca
   branch: master
   specs:
     mjweb (0.0.2)
@@ -216,7 +216,7 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     thor (0.19.1)
-    thread_safe (0.3.4)
+    thread_safe (0.3.5)
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
