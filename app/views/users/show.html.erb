@@ -27,11 +27,11 @@
 
                         <!-- show text line -->
                         <label class="label_80">Tel:</label>
-                        <span><%= @user.tel %></span></br>
+                        <span><%= @user.tel if user.tel? %></span></br>
 
                         <!-- show text line -->
                         <label class="label_80">Last Sign In:</label>
-                        <span><%= @user.last_sign_in_at.strftime("%A %-d %B %Y") %></span></br>
+                        <span><%= @user.last_sign_in_at.strftime("%A %-d %B %Y") if user.last_sign_in_at? %></span></br>
 
                         <!-- show text line -->
                         <label class="label_80">Status:</label>
