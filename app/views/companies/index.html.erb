@@ -1,6 +1,6 @@
 <div class="row title_band">
     <div class="page_title">
-        <h1>List of Companies</h1>            
+        <h1>List of Companies</h1>
     </div>
     <div><%= link_to 'Create Account', new_user_registration_path, class: "title_button"%></div>
 </div>
@@ -9,28 +9,28 @@
 <div class="row">
     <div class="col-1-1 column_1">
         <div class="border">
-                                        
-        <%= render :partial => "flash_notice" %>                 
+
+        <%= render :partial => "flash_notice" %>
                         
             <div class="row">
                 <table>
                     <thead>
                         <tr>
-                            <th class="mob_cell">Name</th>
-                            <th class="tab_cell">Sub-domain</th>
-                            <th class="tab_cell">Domain</th>
+                            <th class="company_name">Name</th>
+                            <th class="company_subdomain">Sub-domain</th>
+                            <th class="company_domain">Domain</th>
                             <th class="row_button no_buttons_1"></th>
                         </tr>
                     </thead>
                 </table>
-                
+
                 <table>
                     <tbody>
                         <% @companies.each do |company| %>
                         <tr>
-                            <td class="mob_cell"><%= company.name %></td>
-                            <td class="tab_cell"><%= company.subdomain %></td>
-                            <td class="tab_cell"><%= company.domain %></td>
+                            <td class="company_name"><%= company.name %></td>
+                            <td class="company_subdomain"><%= company.subdomain %></td>
+                            <td class="company_domain"><%= company.domain %></td>
                             <td class="row_button no_buttons_1">
                                 <%= link_to '', company_path(company), class: 'line_show_icon', title: "show company details" %>
                             </td>
