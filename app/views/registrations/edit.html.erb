@@ -1,6 +1,6 @@
 <div class="row title_band">
     <div class="page_title">
-        <h1>Edit <%= resource_name.to_s.humanize %></h1>            
+        <h1>Edit <%= resource_name.to_s.humanize %></h1>
     </div>
 </div>
 
@@ -22,10 +22,10 @@
                             <%= f.text_field :first_name, autofocus: true %>
                         </span></br>
 
-                        <!-- form input[textarea] -->    
+                        <!-- form input[textarea] -->
                         <label class="label_100">Surname:*</label>
                         <span>
-                            <%= f.text_area :surname %>
+                            <%= f.text_field :surname %>
                         </span></br>
 
                         <!-- form input[email] --> 
@@ -43,14 +43,14 @@
                             <%= f.password_field :password, autocomplete: "off" %>
                         </span></br>
 
-                        <!-- form input[textarea] -->    
+                        <!-- form input[textarea] -->
                         <div class="form_tooltip" id="registration_password_confirm"></div>
                         <label class="label_100">Confirm new password:*</label>
                         <span>
                             <%= f.password_field :password_confirmation, autocomplete: "off" %>
                         </span></br>
 
-                        <!-- form input[textarea] -->    
+                        <!-- form input[textarea] -->
                         <div class="form_tooltip" id="registration_current_password"></div>
                         <label class="label_100">Confirm current password:*</label>
                         <span>
