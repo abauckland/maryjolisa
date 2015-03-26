@@ -5,8 +5,8 @@ $tab_lrg_menu: 940px;
 $tab_sml_menu: 780px;
 $mob_menu: 520px;
 
-.user_name      {display: table-cell; vertical-align: top;}
-.user_email     {@include email}
+.user_name      {@include name}
+.user_email     {display: table-cell}
 .user_phone     {@include phone}
 .user_last_login{@include date}
 .user_status    {@include state}
@@ -24,5 +24,5 @@ $mob_menu: 520px;
 }
 
 @media screen and (max-width: $mob_menu) {
-  .user_email     {display: none;}
+  .user_name     {display: none;}
 }
