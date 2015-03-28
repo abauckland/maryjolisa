@@ -2,6 +2,7 @@
     <div class="page_title">
         <h1>List of Employees</h1>
     </div>
+    <div class="title_help" id="user_index"></div>
     <div><%= link_to 'Add Employee', new_employee_path, class: "title_button"%></div>
 </div>
 
@@ -32,7 +33,7 @@
                         <tr>
                             <td class="user_name"><%= user.name %></td>
                             <td class="user_email"><%= user.email %></td>
-                            <td class="user_phone"><%= user.phone_number if user.tel? %></td>
+                            <td class="user_phone"><%= user.tel if user.tel? %></td>
                             <td class="user_last_login"><%= user.last_sign_in_at.strftime("%d/%m/%y") if user.last_sign_in_at? %></td>
                             <td id="<%= user.id %>_status" class="user_status"><%= user.state %></td>
                             <td id="<%= user.id %>_links" class="row_button no_buttons_2">
