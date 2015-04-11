@@ -7,7 +7,7 @@
 
 
     def index
-      @helps = Help.all.order('title')
+      @helps = Help.all.order(:text)
       authorize @helps
     end
 
