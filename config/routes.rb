@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :plans
+
   resources :dashboards, :only => [:index]
   resources :users, :only => [:index, :show] do
     get :activate, :on => :member

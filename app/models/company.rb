@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
 
   has_many :users
+  belongs_to :plan
   mount_uploader :logo, LogoUploader
 
   after_initialize :set_default_retail_subdomain
@@ -50,6 +51,8 @@ class Company < ActiveRecord::Base
 
   validate :retail_subdomain_uniqueness
   validate :retail_subdomain_not_changed, :if => :persisted?  
+
+  validates :plan_id, presence: true, on: :create
 
 
   def email=(text)
