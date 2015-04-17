@@ -1,17 +1,27 @@
-<!-- desktop & mob menu -->
+
 <ul class="left_menu">
     <li></li>
-    <li><%= link_to "Credit Union", "https://www.securecuserver.co.uk/dotcomunity/members/", :target => "_blank" %></li>
-    <li><%= link_to "Accounts", mjbook.summaries_path %></li>
-    <li><%= link_to "Ecommerce", current_user.company.has_store? ? store_url_for_company(current_user.company, :path => 'admin') : [:new, current_user.company, :store] %></li>
-    <li><%= link_to "Website", mjweb.contents_path %></li>
-    <li><%= link_to "Email", "https://apps.rackspace.com/index.php", :target => "_blank" %></li>
+    <% if current_user.company.plan.creditunion == true %>
+    	<li><%= link_to "Credit Union", "https://www.securecuserver.co.uk/dotcomunity/members/", :target => "_blank" %></li>
+	<% end %>
+    <% if current_user.company.plan.accounts == true %>
+    	<li><%= link_to "Accounts", mjbook.summaries_path %></li>
+	<% end %>
+    <% if current_user.company.plan.ecommerce == true %>
+    	<li><%= link_to "Ecommerce", current_user.company.has_store? ? store_url_for_company(current_user.company, :path => 'admin') : [:new, current_user.company, :store] %></li>
+	<% end %>
+    <% if current_user.company.plan.website == true %>
+    	<li><%= link_to "Website", mjweb.contents_path %></li>
+    <% end %>
+    <% if current_user.company.plan.email == true %>
+    	<li><%= link_to "Email", "https://apps.rackspace.com/index.php", :target => "_blank" %></li>
+    <% end %>
 </ul>
 
 <!-- mob menu select -->
 <nav class="left_menu_mob_select">MENU</nav>
 
-<!-- desktop & mob menu -->
+<!-- mob menu -->
 <ul class="left_menu_mob">
     <li></li>
         <li><p class="mob_menu">Credit Union</p>

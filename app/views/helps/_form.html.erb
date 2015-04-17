@@ -21,20 +21,22 @@
                     <%= f.hidden_field :company_id, :value => current_user.company_id %>
                     <fieldset>
 
-                        <!-- form input[text] --> 
+                        <!-- form input[text] -->
                         <div class="form_tooltip" id="company_retail_subdomain"></div>
                         <label class="label_120">Item class name:*</label>
                         <span>
                             <%= f.text_field :item %>
                         </span></br>
 
-                        <!-- form input[textarea] -->    
-                        <div class="form_tooltip"></div>
-                        <label class="label_80">Help Text:*</label>
-                        <span>
-                            <%= f.text_area :text, class: "widgEditor" %>
-                        </span></br>
-                        
+                        <!-- form input[textarea] -->
+                        <div class="form_help_textarea">
+	                        <div class="form_tooltip"></div>
+	                        <label class="label_80">Help Text:*</label>
+	                        <span>
+	                            <%= f.text_area :text, class: "widgEditor" %>
+	                        </span></br>
+                        </div>
+
                     </fieldset>
             </div>
 <!-- column footer start--> 
