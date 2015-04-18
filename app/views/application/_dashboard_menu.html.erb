@@ -4,7 +4,7 @@
     <% if current_user.company.plan.creditunion == true %>
     	<li><%= link_to "Credit Union", "https://www.securecuserver.co.uk/dotcomunity/members/", :target => "_blank" %></li>
 	<% end %>
-    <% if current_user.company.plan.accounts == true %>
+    <% if current_user.company.plan.books == true %>
     	<li><%= link_to "Accounts", mjbook.summaries_path %></li>
 	<% end %>
     <% if current_user.company.plan.ecommerce == true %>
