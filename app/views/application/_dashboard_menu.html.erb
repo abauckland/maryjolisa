@@ -46,7 +46,7 @@
         </li>
     <% end %>
     <% if current_user.company.plan.website == true %>
-        <li><p class="mob_menu">Website</p>
+        <li><p class="mob_menu"><%= link_to "Website", mjweb.contents_path %></p>
             <ul class="sub_menu_mob">
                 <li><%= link_to "Website", mjweb.contents_path %></li>
             </ul>
