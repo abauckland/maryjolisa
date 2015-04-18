@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: git@github.com:abauckland/mjweb.git
-  revision: e8429d02d6602bb3b2dbcdc9b5d20ceb9d9c3708
+  revision: 55d8b63f203d4d1fe20f620c2228d9db222247bb
   branch: master
   specs:
     mjweb (0.0.2)
@@ -155,7 +155,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     mini_portile (0.6.2)
-    minitest (5.5.1)
+    minitest (5.6.0)
     multi_json (1.11.0)
     multi_xml (0.5.5)
     mysql2 (0.3.17)
