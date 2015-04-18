@@ -8,7 +8,7 @@ $mob_menu: 520px;
 .company_name      {@include name}
 .company_subdomain {@include name}
 .company_domain    {display: table-cell; vertical-align: top;}
-.company_plan      {@include name}
+.company_plan      {@include email}
 
 @media screen and (max-width: $lrg_menu) {
 
