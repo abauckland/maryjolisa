@@ -8,6 +8,7 @@ $mob_menu: 520px;
 .company_name      {@include name}
 .company_subdomain {@include name}
 .company_domain    {display: table-cell; vertical-align: top;}
+.company_plan {@include name
 
 @media screen and (max-width: $lrg_menu) {
 
@@ -18,7 +19,7 @@ $mob_menu: 520px;
 }
 
 @media screen and (max-width: $tab_sml_menu) {
-
+  .company_plan    {display: none;}
 }
 
 @media screen and (max-width: $mob_menu) {
