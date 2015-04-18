@@ -22,16 +22,16 @@
                     <fieldset>
 
                         <!-- form input[text] -->
-                        <div class="form_tooltip" id="company_retail_subdomain"></div>
-                        <label class="label_120">Item class name:*</label>
+                        <div class="form_tooltip" id="help_class"></div>
+                        <label class="label_60">Class:*</label>
                         <span>
                             <%= f.text_field :item %>
                         </span></br>
 
                         <!-- form input[textarea] -->
                         <div class="form_help_textarea">
-	                        <div class="form_tooltip"></div>
-	                        <label class="label_120">Help Text:*</label>
+	                        <div class="form_tooltip" id="help_text"></div>
+	                        <label class="label_60">Text:*</label>
 	                        <span>
 	                            <%= f.text_area :text, class: "widgEditor" %>
 	                        </span></br>
