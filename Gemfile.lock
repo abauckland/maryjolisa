@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: git@github.com:abauckland/mjweb.git
-  revision: 1804f6711331ca1314c086e84b414985ff7d3c53
+  revision: b264c09266b5e98f55705e5b3e3fd7dc08a0a2c7
   branch: master
   specs:
     mjweb (0.0.2)
@@ -173,7 +173,7 @@ GEM
       pdf-core (~> 0.5.1)
       ttfunk (~> 1.4.0)
     prawn-table (0.2.1)
-    pundit (0.3.0)
+    pundit (1.0.0)
       activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-test (0.6.3)
