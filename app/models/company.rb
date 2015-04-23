@@ -88,7 +88,7 @@ class Company < ActiveRecord::Base
     Mjweb::Detail.create(:company_id => self.id)
     Mjweb::Hour.create(:company_id => self.id)
     
-    Mjbook::Companyaccount.create(:company_id => self.id, :name => "cash")
+#    Mjbook::Companyaccount.create(:company_id => self.id, :name => "cash")
     Mjbook::Invoiceterm.create(:company_id => self.id, :ref => "30 days", :period => "30", :terms => "Payment due within 30 days from the date of invoice")
     Mjbook::Quoteterm.create(:company_id => self.id, :ref => "60 days", :period => "60", :terms => "Valid for 60 days after the date of quote")
     
@@ -99,7 +99,7 @@ class Company < ActiveRecord::Base
     Mjbook::Mileagemode.create(:company_id => self.id, :mode => "motorcycle", :rate => 0, :hmrc_rate => 0.24)
     Mjbook::Mileagemode.create(:company_id => self.id, :mode => "cycle", :rate => 0, :hmrc_rate => 0.20)
 
-    Mjbook::Setting.create(:company_id => self.id)
+#    Mjbook::Setting.create(:company_id => self.id)
 
 
   end
