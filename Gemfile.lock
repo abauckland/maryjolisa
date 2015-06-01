@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: 0e3535971cd214c9ca176ba9a48fce036b419cf2
+  revision: 67476d66e239bb907fe963d6588011fb8dcfa974
   branch: master
   specs:
     mjbook (0.0.1)
@@ -150,7 +150,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     mini_portile (0.6.2)
-    minitest (5.6.1)
+    minitest (5.7.0)
     multi_json (1.11.0)
     mysql2 (0.3.18)
     mysql2 (0.3.18-x86-mingw32)
@@ -168,7 +168,7 @@ GEM
       pdf-core (~> 0.5.1)
       ttfunk (~> 1.4.0)
     prawn-table (0.2.1)
-    pundit (1.0.0)
+    pundit (1.0.1)
       activesupport (>= 3.0.0)
     rack (1.5.3)
     rack-test (0.6.3)
