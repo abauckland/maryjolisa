@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: 32a196f4cd8a2f7a204cbf316be66a9741f15879
+  revision: 04645e04bf5c78e6050433d16ad509ee28c45195
   branch: master
   specs:
     mjbook (0.0.1)
@@ -170,7 +170,7 @@ GEM
     prawn-table (0.2.1)
     pundit (1.0.1)
       activesupport (>= 3.0.0)
-    rack (1.5.4)
+    rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.2)
