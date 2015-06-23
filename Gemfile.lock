@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: 16dd381439f79f93ab462503b3f51b7bef106eb7
+  revision: 014fcfaede7570d2fbf777f97b474399e4776f88
   branch: master
   specs:
     mjbook (0.0.1)
@@ -36,7 +36,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    aasm (4.1.1)
+    aasm (4.2.0)
     actionmailer (4.1.2)
       actionpack (= 4.1.2)
       actionview (= 4.1.2)
