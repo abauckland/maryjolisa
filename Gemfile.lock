@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: 7f414103082813ead69b094cd67b4ff1d996e855
+  revision: c570abf54cecff66a715b692a1d3a22a5bafca7c
   branch: master
   specs:
     mjbook (0.0.1)
@@ -209,7 +209,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.3.1)
+    sprockets-rails (2.3.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
