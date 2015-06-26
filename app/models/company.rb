@@ -91,9 +91,7 @@ class Company < ActiveRecord::Base
 #    Mjbook::Companyaccount.create(:company_id => self.id, :name => "cash")
     Mjbook::Invoiceterm.create(:company_id => self.id, :ref => "30 days", :period => "30", :terms => "Payment due within 30 days from the date of invoice")
     Mjbook::Quoteterm.create(:company_id => self.id, :ref => "60 days", :period => "60", :terms => "Valid for 60 days after the date of quote")
-    
-    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => "mileage", :hmrcgroup_id => 1)
-    
+
     Mjbook::Mileagemode.create(:company_id => self.id, :mode => "car/van (<10,000 miles)", :rate => 0, :hmrc_rate => 0.45)
     Mjbook::Mileagemode.create(:company_id => self.id, :mode => "car/van (>10,000 miles)", :rate => 0, :hmrc_rate => 0.25)
     Mjbook::Mileagemode.create(:company_id => self.id, :mode => "motorcycle", :rate => 0, :hmrc_rate => 0.24)
@@ -101,7 +99,24 @@ class Company < ActiveRecord::Base
 
 #    Mjbook::Setting.create(:company_id => self.id)
 
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Advertising And Business Entertainment Costs', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Business  Bank And Credit Card Charges', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Business Mileage', :hmrcgroup_id => 2)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Car Van And Travel Expenses', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Cost Of Goods', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Depreciation And Loss Or Profit On Sale Of Assests', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Interest On Bank Or Other Loans', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Other Allowable Business Expenses', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Payment To Subcontractors', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Phone Stationary And Other Office Costs', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Professional Fees', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Rent Rates Power And Insurance Costs', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Repairs And Renewals Of Property And Equipment', :hmrcgroup_id => 1)
+    Mjbook::Hmrcexpcat.create(:company_id => self.id, :category => 'Wages Salaries And Other Staff Costs', :hmrcgroup_id => 1)
 
+    Mjbook::Hmrcgroup.create(:company_id => self.id, :group => 'Business')
+    Mjbook::Hmrcgroup.create(:company_id => self.id, :group => 'Personal')
+    Mjbook::Hmrcgroup.create(:company_id => self.id, :group => 'Captial')
   end
 
   def set_default_retail_subdomain
