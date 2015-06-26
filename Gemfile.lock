@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: 91ecbbbb41f3421d06a527413cdab47c6d99b672
+  revision: 671bc7898630736207586cf8ccae0c3485ae609f
   branch: master
   specs:
     mjbook (0.0.1)
@@ -10,7 +10,6 @@ GIT
       prawn-table
       pundit
       rails (~> 4.1.0)
-      rmagick (= 2.13.3)
 
 GIT
   remote: git@github.com:abauckland/mjweb.git
