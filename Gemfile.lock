@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:abauckland/mjbook.git
-  revision: d2d98fda047124c6dc8358783ec546fedf61d2dc
+  revision: e6d7834386ca5dc3f2ab88f30b242ffbea05f8aa
   branch: master
   specs:
     mjbook (0.0.1)
@@ -203,7 +203,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sprig (0.1.7)
-    sprockets (2.12.3)
+    sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
